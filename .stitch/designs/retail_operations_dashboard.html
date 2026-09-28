@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-fixed-variant":"#005137","secondary-container":"#d5e3fc","inverse-on-surface":"#eaf1ff","error":"#ba1a1a","tertiary":"#000000","on-tertiary-container":"#069669","primary-fixed-dim":"#bec6e0","on-error-container":"#93000a","outline":"#76777d","on-secondary":"#ffffff","tertiary-container":"#002114","on-secondary-container":"#57657a","on-surface":"#0b1c30","on-secondary-fixed":"#0d1c2e","surface-container-lowest":"#ffffff","on-primary":"#ffffff","primary-container":"#131b2e","background":"#f8f9ff","tertiary-fixed-dim":"#68dba9","on-error":"#ffffff","surface-dim":"#cbdbf5","inverse-surface":"#213145","surface-container":"#e5eeff","surface-container-highest":"#d3e4fe","on-tertiary":"#ffffff","inverse-primary":"#bec6e0","on-tertiary-fixed":"#002114","on-primary-fixed":"#131b2e","surface":"#f8f9ff","outline-variant":"#c6c6cd","error-container":"#ffdad6","on-secondary-fixed-variant":"#3a485b","surface-container-low":"#eff4ff","secondary-fixed":"#d5e3fc","surface-bright":"#f8f9ff","on-surface-variant":"#45464d","on-primary-container":"#7c839b","surface-tint":"#565e74","secondary-fixed-dim":"#b9c7df","surface-variant":"#d3e4fe","tertiary-fixed":"#85f8c4","primary-fixed":"#dae2fd","on-primary-fixed-variant":"#3f465c","on-background":"#0b1c30","surface-container-high":"#dce9ff","primary":"#000000","secondary":"#515f74"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"topbar-height":"3.5rem","gutter-xs":"0.25rem","gutter-xl":"2rem","gutter-2xl":"3rem","sidebar-width":"16rem","container-padding-desktop":"2rem","gutter-base":"1rem","gutter-md":"0.75rem","container-padding-mobile":"1rem","gutter-sm":"0.5rem","gutter-lg":"1.5rem"},"fontFamily":{"metric-display":["Geist"],"body-lg":["Geist"],"label-md":["Geist"],"body-sm":["Geist"],"headline-md":["Geist"],"body-md":["Geist"],"headline-sm":["Geist"],"display":["Geist"],"headline-lg":["Geist"],"label-sm":["Geist"],"label-lg":["Geist"]},"fontSize":{"metric-display":["28px",{"lineHeight":"32px","letterSpacing":"-0.03em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"display":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-sidebar-width bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-topbar-height px-gutter-lg flex items-center justify-between"><div class="flex items-center gap-gutter-sm"><div class="w-7 h-7 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-surface text-base">storefront</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">StorePulse AI</span></div></div><div class="px-gutter-sm py-gutter-sm"><nav class="flex flex-col gap-gutter-xs" data-active-classes="bg-surface-container-high text-on-surface font-headline-sm"><a aria-current="page" class="flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-lg transition-all bg-surface-container-high text-on-surface font-headline-sm" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="live-cameras" href="#"><span class="material-symbols-outlined text-[20px]">videocam</span><span>Live Cameras</span></a><a class="flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="floor-and-heatmap" href="#"><span class="material-symbols-outlined text-[20px]">layers</span><span>Floor & Heatmap</span></a><a class="flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Inventory</span></a><a class="flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="queue-analytics" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Queue Analytics</span></a><a class="flex items-center justify-between px-gutter-md py-gutter-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="alerts" href="#"><div class="flex items-center gap-gutter-md"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span>Alerts</span></div><span class="bg-error text-on-error font-label-sm text-label-sm px-1.5 py-0.5 rounded-full">3</span></a><a class="flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a></nav></div></div><div class="p-gutter-md m-gutter-sm bg-surface-container-low rounded-xl"><div class="flex items-center justify-between mb-gutter-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fleet Link</span><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span></div><div class="font-label-md text-label-md text-on-surface font-medium">12 / 12 Nodes Online</div><p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Latency 24ms • Stable</p></div></aside><div class="pl-sidebar-width"><header class="fixed top-0 left-sidebar-width right-0 h-topbar-height bg-surface-container-lowest z-40 flex items-center justify-between px-container-padding-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-gutter-lg"><div class="flex items-center gap-gutter-sm bg-surface-container-low px-gutter-md py-1.5 rounded-lg cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant text-[18px]">store</span><span class="font-label-lg text-label-lg text-on-surface">Downtown Flagship #104</span><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div><div class="flex items-center gap-gutter-xs bg-surface-container px-2.5 py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span><span class="font-label-sm text-label-sm text-on-tertiary-container font-medium">Live • All Systems Operational</span></div></div><div class="flex items-center gap-gutter-lg"><div class="hidden md:flex items-center gap-gutter-xs font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span>Thu, Oct 24 • 14:32 EST</span></div><button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span></button><div class="flex items-center gap-gutter-sm pl-gutter-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATFNT-ZWt_cCSjD8Y1aZkE3fgajmnnkYO8oCQWSqIw51ovnVVZa4b7Buh20MtLKXcT6AG9JOmFIabQWdIPVjpb1gWymh9Lk4gT7_SLndbS2WvyZLWxRBJTihiciH0redWDeZfVsnPcyko_pHcem1_4hOMw1pwed-bPtUVtoGpi5qiUA6aNNguIT4MlvkKEiWFofsWZp8-ejC0gNXUSQnsnuJE6RVM9NF4QdClKFKhXCjZxf9RfrWo1"/><div class="hidden lg:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface leading-tight">Elena Rostova</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Store Director</span></div></div></div></header><main class="w-full pt-topbar-height bg-surface"><div class="flex flex-col w-full p-gutter-lg space-y-gutter-lg">
+<!-- Operational Context Header Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-md pb-1">
+<div class="flex flex-col">
+<div class="flex items-center gap-gutter-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Spatial Telemetry</span>
+<span class="text-outline-variant font-label-sm text-label-sm">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Store Operations Cockpit</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5 font-semibold tracking-tight">Main Sales Floor Overview</h1>
+</div>
+<div class="flex items-center gap-gutter-sm self-start md:self-auto">
+<div class="flex items-center bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container mr-2 animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Vision Engine v4.12: Active</span>
+</div>
+<button class="flex items-center gap-1.5 bg-surface-container-lowest hover:bg-surface-container text-on-surface px-3 py-1.5 rounded-lg shadow-sm transition-colors font-label-md text-label-md font-medium">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+<span>Filter Stream</span>
+</button>
+<button class="flex items-center gap-1.5 bg-primary text-on-primary hover:bg-primary-container px-3.5 py-1.5 rounded-lg shadow-sm transition-colors font-label-md text-label-md font-medium">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Shift Report</span>
+</button>
+</div>
+</div>
+<!-- 1. Top Stats Bar (4 Compact KPI Tiles) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-base">
+<!-- KPI 1: Occupancy -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Current Occupancy</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">person</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-on-surface">142</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 210 safe cap</span>
+</div>
+<div class="mt-3">
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 67.6%"></div>
+</div>
+<div class="flex justify-between items-center mt-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">68% of capacity</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium">Optimal Zone</span>
+</div>
+</div>
+</div>
+<!-- KPI 2: Total Footfall -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Total Today's Footfall</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">directions_walk</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-on-surface">1,845</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#065F46]">
+          +14.2%
+        </span>
+</div>
+<div class="mt-3 flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">vs yesterday (1,615)</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Peak 13:00-14:00</span>
+</div>
+</div>
+<!-- KPI 3: Avg Queue Wait -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Avg Queue Wait</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">timer</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-on-surface">2m 45s</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-[#FFFBEB] text-[#92400E]">
+          +45s vs Target
+        </span>
+</div>
+<div class="mt-3 flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SLA Threshold: 2m 00s</span>
+<span class="font-label-sm text-label-sm text-[#92400E] font-medium">Surge Action Req</span>
+</div>
+</div>
+<!-- KPI 4: Active Surveillance Feeds -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Surveillance Telemetry</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">videocam</span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-on-surface">12 / 12</span>
+<span class="font-label-md text-label-md text-on-tertiary-container font-medium">Online</span>
+</div>
+<div class="mt-3 flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Edge nodes processing</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium">0 packet drop</span>
+</div>
+</div>
+</section>
+<!-- 2. Main Content Split Grid (60% Left, 40% Right) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-base items-start">
+<!-- LEFT COLUMN: Primary Surveillance & Spatial Vision (xl:col-span-7) -->
+<div class="xl:col-span-7 flex flex-col space-y-gutter-base">
+<!-- Primary Live Screening Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Live Feed Top Bar -->
+<div class="p-gutter-base pb-3 flex flex-wrap items-center justify-between gap-y-2 bg-surface-container-lowest">
+<div class="flex items-center gap-gutter-sm">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-error/10 text-error font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span>REC</span>
+</div>
+<div class="h-4 w-px bg-surface-container-high mx-1"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Live Screening — Main Floor (CAM-04)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2">1080p · 30 FPS · H.265</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<!-- Camera Switcher -->
+<div class="relative inline-block text-left">
+<select class="appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md py-1.5 pl-3 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary" id="camSelector">
+<option selected="" value="cam-04">CAM-04: Main Sales Floor</option>
+<option value="cam-01">CAM-01: Main Entrance & Turnstiles</option>
+<option value="cam-02">CAM-02: Fresh Produce & Deli</option>
+<option value="cam-03">CAM-03: Checkout & POS Registers</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors" title="Toggle Neural Overlay">
+<span class="material-symbols-outlined text-[18px]">polyline</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors" title="Full Viewport">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Video Frame Viewport with Professional HUD Overlays -->
+<div class="relative w-full aspect-[16/9] bg-primary-container overflow-hidden group">
+<img alt="Surveillance camera live feed showing active supermarket floor" class="w-full h-full object-cover select-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJbh_siHNJJLtbfElqn767nJDaK5JwFFqxQmx6w8RAUAhtIHc1t0rVabZM_rV5XgRU5y1Pmvz9UMBWBzLegJl_BMBqa5-h4lpCAfYY7jgz8Z5Dr9GwAMoiPDlBlgkDzs5ehEdcymPLqAS-apYQf7LPhpxw9-MczyN4vY21r8C4JWQud9_AjkLxDP_APbJvZTROMCUGVDfCkvKE0AQcpriWaHA3YpshB7tEHiJt_TNaFv51SclKDNYD"/>
+<!-- Camera Technical OSD Overlays (Clean, minimal typography) -->
+<div class="absolute top-3 left-3 flex items-center gap-3 pointer-events-none">
+<span class="bg-primary/80 backdrop-blur-sm text-surface px-2 py-0.5 rounded font-label-sm text-label-sm tracking-wider">
+              CAM-04 [FOV: 112° N-W]
+            </span>
+<span class="text-surface font-label-sm text-label-sm drop-shadow-sm font-mono tracking-tight" id="liveTimestamp">
+              14:32:48.104 EST
+            </span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-2 pointer-events-none">
+<span class="bg-primary/80 backdrop-blur-sm text-on-tertiary-container px-2 py-0.5 rounded font-label-sm text-label-sm flex items-center gap-1 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+              AI Bounding Box: Active (8 Targets)
+            </span>
+</div>
+<!-- Synthetic Spatial Vision Bounding Overlays (Subtle, non-neon enterprise precision) -->
+<!-- Customer 48 -->
+<div class="absolute top-[28%] left-[34%] w-[9%] h-[32%] border border-surface/70 rounded-sm pointer-events-none">
+<div class="absolute -top-5 left-0 bg-primary/85 backdrop-blur-sm text-surface px-1.5 py-0.5 rounded text-[10px] whitespace-nowrap flex items-center gap-1">
+<span>#48</span>
+<span class="text-on-tertiary-container font-mono">Dwell: 1.8m</span>
+</div>
+<div class="absolute bottom-0 right-0 w-1.5 h-1.5 bg-surface"></div>
+</div>
+<!-- Customer 52 -->
+<div class="absolute top-[38%] left-[58%] w-[10%] h-[34%] border border-surface/70 rounded-sm pointer-events-none">
+<div class="absolute -top-5 left-0 bg-primary/85 backdrop-blur-sm text-surface px-1.5 py-0.5 rounded text-[10px] whitespace-nowrap flex items-center gap-1">
+<span>#52</span>
+<span class="text-secondary-fixed-dim font-mono">In Aisle 3</span>
+</div>
+<div class="absolute bottom-0 right-0 w-1.5 h-1.5 bg-surface"></div>
+</div>
+<!-- Customer 57 (Flagged Dwell) -->
+<div class="absolute top-[22%] left-[76%] w-[8%] h-[30%] border border-[#f59e0b]/80 rounded-sm pointer-events-none">
+<div class="absolute -top-5 left-0 bg-primary/90 text-[#f59e0b] px-1.5 py-0.5 rounded text-[10px] whitespace-nowrap flex items-center gap-1 font-medium">
+<span>#57</span>
+<span>Dwell: 8.4m ⚠</span>
+</div>
+</div>
+<!-- Viewport HUD Bottom Control Strip -->
+<div class="absolute bottom-3 inset-x-3 flex items-center justify-between bg-primary/75 backdrop-blur-md px-3 py-1.5 rounded-lg text-surface opacity-90 transition-opacity">
+<div class="flex items-center gap-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-surface/80">
+<span class="material-symbols-outlined text-[15px]">center_focus_strong</span>
+                Auto-Tracking
+              </span>
+<span class="text-surface/40">|</span>
+<span class="text-surface/80 font-mono">PTZ: X:241 Y:088 Z:1.2X</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:text-surface text-surface/80 p-1" title="Step Back 10s">
+<span class="material-symbols-outlined text-[16px]">replay_10</span>
+</button>
+<button class="hover:text-surface text-on-tertiary-container font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface/10 flex items-center gap-1" title="Live Sync">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                SYNC
+              </button>
+<button class="hover:text-surface text-surface/80 p-1" title="Volume">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Camera Timeline Scrubber Bar -->
+<div class="p-gutter-base pt-3 bg-surface-container-lowest">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1.5">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">Time Playback Buffer</span>
+<span class="text-on-surface-variant font-mono">14:00 - 14:32</span>
+</div>
+<span class="text-on-surface font-mono font-medium">00:32:48 Live Stream</span>
+</div>
+<div class="relative w-full h-5 bg-surface-container-low rounded cursor-pointer flex items-center px-1">
+<!-- Heat segments in scrubber -->
+<div class="absolute left-[15%] w-[8%] h-2.5 bg-secondary-container rounded-sm" title="Minor Queue Surge"></div>
+<div class="absolute left-[45%] w-[12%] h-2.5 bg-[#fde68a] rounded-sm" title="Peak Aisles Occupancy"></div>
+<div class="absolute left-[78%] w-[6%] h-2.5 bg-[#fecaca] rounded-sm" title="Checkout Congestion"></div>
+<div class="w-full h-1 bg-surface-container-high rounded relative">
+<!-- Playhead needle -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-primary rounded-full shadow"></div>
+</div>
+</div>
+<!-- Quick Thumbnails Camera Selector -->
+<div class="grid grid-cols-4 gap-gutter-sm mt-3.5">
+<div class="cursor-pointer p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">CAM 01</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Turnstile Foyer</p>
+<span class="text-[10px] text-on-surface-variant block mt-0.5">22 Ppl/min</span>
+</div>
+<div class="cursor-pointer p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">CAM 02</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Fresh Produce</p>
+<span class="text-[10px] text-on-surface-variant block mt-0.5">38 Shoppers</span>
+</div>
+<div class="cursor-pointer p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">CAM 03</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#f59e0b]"></span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">POS Registers</p>
+<span class="text-[10px] text-[#92400E] block mt-0.5">Wait: 2m 45s</span>
+</div>
+<div class="cursor-pointer p-1.5 rounded-lg bg-surface-container-high ring-1 ring-primary transition-all">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">CAM 04</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface truncate font-medium">Main Sales Floor</p>
+<span class="text-[10px] text-on-tertiary-container font-medium block mt-0.5">Active Feed (82)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Store Floor Heatmap & Architectural Dwell Breakdown -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">floor</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Store Spatial Heatmap & Zone Dwell</span>
+</div>
+<div class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-surface-container-high"></span>Low (<2m)</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#d5e3fc]"></span>Med (2-5m)</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#fde68a]"></span>High (5m+)</span>
+</div>
+</div>
+<!-- Architectural Zone Matrix Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-sm">
+<!-- Zone 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Zone A: Entrance</span>
+<span class="px-1.5 py-0.5 rounded font-label-sm text-label-sm bg-[#ECFDF5] text-[#065F46] font-medium">Fluid</span>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] text-on-surface-variant">
+<span>Avg Dwell:</span>
+<span class="font-medium text-on-surface font-mono">1.8 min</span>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant">
+<span>Pass-through:</span>
+<span class="font-medium text-on-surface">88%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<!-- Zone 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Zone B: Produce</span>
+<span class="px-1.5 py-0.5 rounded font-label-sm text-label-sm bg-[#ECFDF5] text-[#065F46] font-medium">Normal</span>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] text-on-surface-variant">
+<span>Avg Dwell:</span>
+<span class="font-medium text-on-surface font-mono">3.2 min</span>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant">
+<span>Active Shoppers:</span>
+<span class="font-medium text-on-surface">34</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<!-- Zone 3 (Flagged Dwell) -->
+<div class="p-3 rounded-lg bg-[#FFFBEB] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-[#92400E]">Zone C: Confectionery</span>
+<span class="px-1.5 py-0.5 rounded font-label-sm text-label-sm bg-[#FDE68A] text-[#92400E] font-medium">High Dwell</span>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] text-[#92400E]/80">
+<span>Avg Dwell:</span>
+<span class="font-semibold text-[#92400E] font-mono">8.4 min</span>
+</div>
+<div class="flex justify-between text-[11px] text-[#92400E]/80">
+<span>Restock Bottleneck:</span>
+<span class="font-semibold text-[#92400E]">Milk Display</span>
+</div>
+</div>
+<div class="w-full bg-[#FDE68A] h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-[#D97706] h-full rounded-full" style="width: 84%"></div>
+</div>
+</div>
+<!-- Zone 4 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Zone D: Checkout</span>
+<span class="px-1.5 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-on-secondary-fixed font-medium">Moderate</span>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] text-on-surface-variant">
+<span>Avg Dwell:</span>
+<span class="font-medium text-on-surface font-mono">4.8 min</span>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant">
+<span>Shoppers Queued:</span>
+<span class="font-medium text-on-surface">19</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 62%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Operations & Alerts Stream (xl:col-span-5) -->
+<div class="xl:col-span-5 flex flex-col space-y-gutter-base">
+<!-- Checkout Queue & Predictive Surge Module -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">point_of_sale</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Checkout Lanes & Queue Pulse</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-Refresh 5s</span>
+</div>
+<!-- Predictive AI Alert Card -->
+<div class="p-3 rounded-lg bg-secondary-container/40 flex items-start gap-3">
+<div class="w-7 h-7 rounded-md bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">auto_graph</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-secondary-fixed uppercase tracking-wider">AI Predictive Surge</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">T-Minus 8m</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Predicted surge at Checkout: <span class="font-semibold">+14 shoppers in 8 mins</span>.
+            </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recommended Action:</span>
+<button class="px-2 py-0.5 bg-primary text-on-primary rounded font-label-sm text-label-sm hover:bg-primary-container transition-colors font-medium">
+                Open Counter 4 Now
+              </button>
+</div>
+</div>
+</div>
+<!-- Individual Counter Load Breakdown -->
+<div class="space-y-2 pt-1">
+<!-- Counter 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Counter 01 (Cash/Card)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Staff: Marcus V.</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-mono text-on-surface font-semibold">3 in line</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Wait: 1m 50s</span>
+</div>
+</div>
+<!-- Counter 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Counter 02 (Card Only)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Staff: Sarah K.</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-mono text-on-surface font-semibold">2 in line</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Wait: 1m 20s</span>
+</div>
+</div>
+<!-- Counter 3 (Congested) -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-[#FEF2F2] hover:bg-[#FEE2E2] transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-2 h-2 rounded-full bg-[#EF4444]"></div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-[#991B1B]">Counter 03 (Speed Lane)</span>
+<span class="font-label-sm text-label-sm text-[#991B1B]/80 block">Staff: Dan P. (Price Check)</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-mono text-[#991B1B] font-semibold">6 in line</span>
+<span class="font-label-sm text-label-sm text-[#991B1B] font-medium block">Wait: 4m 10s ⚠</span>
+</div>
+</div>
+<!-- Counter 4 (Standby) -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low opacity-75">
+<div class="flex items-center gap-2.5">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div>
+<span class="font-label-md text-label-md font-medium text-on-surface">Counter 04 (Express)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Status: On Standby</span>
+</div>
+</div>
+<div class="text-right">
+<button class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface font-medium hover:bg-surface-container-high transition-colors">
+                Activate Lane
+              </button>
+</div>
+</div>
+<!-- Self Checkout Bank -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Self-Checkout (8 Kiosks)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">7/8 In Use · Host: Maya T.</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-mono text-on-surface font-semibold">8 in line</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Wait: 1m 05s</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Live Operational Alerts -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">notifications_active</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Live Operational Alerts</span>
+</div>
+<span class="bg-error text-on-error font-label-sm text-label-sm px-1.5 py-0.5 rounded-full font-medium">3 Active</span>
+</div>
+<div class="space-y-2.5">
+<!-- Alert 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<div class="w-6 h-6 rounded bg-[#FEF2F2] text-[#991B1B] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Congestion Spike: Counter 3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">2m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Queue exceeded SLA limit (4m 10s vs 2m threshold).</p>
+</div>
+</div>
+<!-- Alert 2: Restock -->
+<div class="p-2.5 rounded-lg bg-[#FFFBEB] flex items-start gap-2.5">
+<div class="w-6 h-6 rounded bg-[#FDE68A] text-[#92400E] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">inventory</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-[#92400E]">Shelf Restock Required</span>
+<span class="font-label-sm text-label-sm text-[#92400E]/80 font-mono">14m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-[#92400E] mt-0.5">Aisle 3: Organic Whole Milk 1-Gallon depleted below 10%.</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="px-2 py-0.5 rounded text-[11px] font-medium bg-[#92400E] text-surface hover:bg-[#78350F] transition-colors">
+                  Acknowledge & Dispatch
+                </button>
+<button class="px-2 py-0.5 rounded text-[11px] font-medium bg-[#FDE68A] text-[#92400E] hover:bg-[#FCD34D] transition-colors">
+                  Ignore
+                </button>
+</div>
+</div>
+</div>
+<!-- Alert 3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<div class="w-6 h-6 rounded bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">person_pin_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Dwell Time Warning: Aisle 3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">28m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Customer cluster stationary for >8m around confectionery endcap.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footfall Curve & Peak Dynamic Chart (Inline SVG) -->
+<div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">analytics</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Daily Footfall Dynamic Curve</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium">+14.2% Today</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Hourly customer flow vs benchmark capacity.</p>
+<!-- Inline SVG Trend Curve -->
+<div class="w-full h-32 relative">
+<svg class="w-full h-full overflow-visible text-secondary" preserveaspectratio="none" viewbox="0 0 400 120">
+<defs>
+<lineargradient id="curveGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#515f74" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#515f74" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Guideline lines -->
+<line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="400" y1="20" y2="20"></line>
+<line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="400" y1="60" y2="60"></line>
+<line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="400" y1="100" y2="100"></line>
+<!-- Area Shading -->
+<polygon fill="url(#curveGradient)" points="0,110 30,105 70,95 110,80 150,55 190,40 230,30 270,42 310,65 350,85 390,92 400,95 400,120 0,120"></polygon>
+<!-- Main Footfall Line -->
+<path d="M 0 110 Q 30 105, 70 95 T 150 55 T 230 30 T 310 65 T 390 92 L 400 95" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Target Benchmark Dashed Curve -->
+<path d="M 0 115 Q 70 102, 150 70 T 230 45 T 310 75 T 400 105" fill="none" stroke="#94a3b8" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Peak Highlight Point at 13:30 (x=230, y=30) -->
+<circle cx="230" cy="30" fill="#000000" r="4" stroke="#ffffff" stroke-width="2"></circle>
+</svg>
+<!-- Floating Peak Tag -->
+<div class="absolute top-2 left-[54%] -translate-x-1/2 bg-primary text-surface px-1.5 py-0.5 rounded font-label-sm text-[10px] shadow pointer-events-none">
+            Peak: 312 / hr
+          </div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant pt-2">
+<span>09:00</span>
+<span>11:00</span>
+<span>13:00 (Peak)</span>
+<span>15:00</span>
+<span>17:00</span>
+<span>19:00</span>
+<span>21:00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Script for Timestamp & Camera Switching -->
+<script>
+  (function() {
+    // Real-time HUD Clock
+    function updateClock() {
+      const el = document.getElementById('liveTimestamp');
+      if (!el) return;
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      const ms = String(now.getMilliseconds()).padStart(3, '0');
+      el.textContent = `${h}:${m}:${s}.${ms} EST`;
+    }
+    setInterval(updateClock, 100);
+
+    // Interactive Camera Selector listener
+    const select = document.getElementById('camSelector');
+    if (select) {
+      select.addEventListener('change', function(e) {
+        console.log('Switched to live camera feed:', e.target.value);
+      });
+    }
+  })();
+</script></main></div></body></html>

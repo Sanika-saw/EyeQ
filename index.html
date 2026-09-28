@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html class="h-full bg-surface" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>EyeQ — Retail Intelligence & Autonomous Surveillance</title>
+
+  <!-- Typography & Icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed-variant": "#005137",
+            "secondary-container": "#d5e3fc",
+            "inverse-on-surface": "#eaf1ff",
+            "error": "#ba1a1a",
+            "tertiary": "#000000",
+            "on-tertiary-container": "#069669",
+            "primary-fixed-dim": "#bec6e0",
+            "on-error-container": "#93000a",
+            "outline": "#76777d",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#002114",
+            "on-secondary-container": "#57657a",
+            "on-surface": "#0b1c30",
+            "on-secondary-fixed": "#0d1c2e",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "primary-container": "#1E3A8A",
+            "background": "#ffffff",
+            "tertiary-fixed-dim": "#68dba9",
+            "on-error": "#ffffff",
+            "surface-dim": "#cbdbf5",
+            "inverse-surface": "#213145",
+            "surface-container": "#f1f5f9",
+            "surface-container-highest": "#e2e8f0",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#bec6e0",
+            "on-tertiary-fixed": "#002114",
+            "on-primary-fixed": "#131b2e",
+            "surface": "#ffffff",
+            "outline-variant": "#c6c6cd",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#3a485b",
+            "surface-container-low": "#f8fafc",
+            "secondary-fixed": "#d5e3fc",
+            "surface-bright": "#ffffff",
+            "on-surface-variant": "#45464d",
+            "on-primary-container": "#bfdbfe",
+            "surface-tint": "#565e74",
+            "secondary-fixed-dim": "#b9c7df",
+            "surface-variant": "#d3e4fe",
+            "tertiary-fixed": "#85f8c4",
+            "primary-fixed": "#dae2fd",
+            "on-primary-fixed-variant": "#3f465c",
+            "on-background": "#0b1c30",
+            "surface-container-high": "#e2e8f0",
+            "primary": "#1E3A8A",
+            "secondary": "#515f74"
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          spacing: {
+            "topbar-height": "3.5rem",
+            "gutter-xs": "0.25rem",
+            "gutter-xl": "2rem",
+            "gutter-2xl": "3rem",
+            "sidebar-width": "16rem",
+            "container-padding-desktop": "2rem",
+            "gutter-base": "1rem",
+            "gutter-md": "0.75rem",
+            "container-padding-mobile": "1rem",
+            "gutter-sm": "0.5rem",
+            "gutter-lg": "1.5rem"
+          },
+          fontFamily: {
+            "metric-display": ["Geist", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "label-md": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "headline-md": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "headline-sm": ["Geist", "sans-serif"],
+            "display": ["Geist", "sans-serif"],
+            "headline-lg": ["Geist", "sans-serif"],
+            "label-sm": ["Geist", "sans-serif"],
+            "label-lg": ["Geist", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          fontSize: {
+            "metric-display": ["28px", { lineHeight: "32px", letterSpacing: "-0.03em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "body-sm": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "display": ["32px", { lineHeight: "40px", letterSpacing: "-0.025em", fontWeight: "600" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "600" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+
+  <!-- ================= LEFT SIDEBAR NAVIGATION ================= -->
+  <aside class="fixed left-0 top-0 h-full w-sidebar-width glass-panel z-50 flex flex-col justify-between border-r border-slate-200/50 shadow-xl">
+    <div class="flex flex-col">
+      <!-- Logo Header -->
+      <div class="h-topbar-height px-gutter-lg flex items-center justify-between border-b border-slate-200/40">
+        <div class="flex items-center gap-gutter-sm cursor-pointer" data-jump-tab="overview">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-slate-950 via-slate-900 to-emerald-800 flex items-center justify-center shadow-lg text-surface ring-1 ring-white/20">
+            <span class="material-symbols-outlined text-[22px] text-emerald-400">visibility</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">EyeQ</span>
+            <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider -mt-1">Retail Intelligence</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="px-gutter-sm py-gutter-sm">
+        <nav class="flex flex-col gap-gutter-xs">
+          <!-- 1. Overview Tab -->
+          <a class="glass-tab tab-featured flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-xl transition-all bg-primary text-white font-headline-sm font-semibold active shadow-sm" data-nav-tab="overview" href="#overview">
+            <span class="material-symbols-outlined text-[20px]">grid_view</span>
+            <span>Overview</span>
+          </a>
+
+          <!-- 2. Live Cameras Tab -->
+          <a class="glass-tab tab-featured flex items-center justify-between px-gutter-md py-gutter-sm rounded-xl font-body-md text-body-md transition-all" data-nav-tab="live-cameras" href="#live-cameras">
+            <div class="flex items-center gap-gutter-md">
+              <span class="material-symbols-outlined text-[20px]">videocam</span>
+              <span>Live Cameras</span>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-error rec-pulse" title="Live Video Active"></span>
+          </a>
+
+          <!-- 3. Floor & Heatmap Tab -->
+          <a class="glass-tab flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" data-nav-tab="floor-and-heatmap" href="#floor-and-heatmap">
+            <span class="material-symbols-outlined text-[20px]">layers</span>
+            <span>Floor & Heatmap</span>
+          </a>
+
+          <!-- 4. Inventory Tab -->
+          <a class="glass-tab flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" data-nav-tab="inventory" href="#inventory">
+            <span class="material-symbols-outlined text-[20px]">inventory_2</span>
+            <span>Inventory</span>
+          </a>
+
+          <!-- 5. Queue Analytics Tab -->
+          <a class="glass-tab flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" data-nav-tab="queue-analytics" href="#queue-analytics">
+            <span class="material-symbols-outlined text-[20px]">group</span>
+            <span>Queue Analytics</span>
+          </a>
+
+          <!-- 6. Alerts Tab -->
+          <a class="glass-tab flex items-center justify-between px-gutter-md py-gutter-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" data-nav-tab="alerts" href="#alerts">
+            <div class="flex items-center gap-gutter-md">
+              <span class="material-symbols-outlined text-[20px]">notifications_active</span>
+              <span>Alerts</span>
+            </div>
+            <span class="bg-error text-on-error font-label-sm text-label-sm px-1.5 py-0.5 rounded-full font-medium shadow-sm" id="navAlertsBadge">3</span>
+          </a>
+
+          <!-- 7. Settings Tab -->
+          <a class="glass-tab flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" data-nav-tab="settings" href="#settings">
+            <span class="material-symbols-outlined text-[20px]">tune</span>
+            <span>Settings</span>
+          </a>
+
+          <!-- 8. Weekly Report Tab -->
+          <a class="glass-tab flex items-center gap-gutter-md px-gutter-md py-gutter-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" data-nav-tab="weekly-report" href="#weekly-report">
+            <span class="material-symbols-outlined text-[20px]">download</span>
+            <span>Weekly Report</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Edge Fleet Telemetry Card -->
+    <div class="p-gutter-md m-gutter-sm glass-panel rounded-2xl border border-white/60 shadow-lg">
+      <div class="flex items-center justify-between mb-gutter-xs">
+        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">EyeQ Edge Link</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      </div>
+      <div class="font-label-md text-label-md text-on-surface font-semibold">12 / 12 Nodes Online</div>
+      <p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5" id="nodeLatency">Latency 24ms • Stable</p>
+    </div>
+  </aside>
+
+  <!-- ================= TOP HEADER BAR ================= -->
+  <div class="pl-sidebar-width">
+    <header class="fixed top-0 left-sidebar-width right-0 h-topbar-height glass-panel z-40 flex items-center justify-between px-container-padding-desktop border-b border-slate-200/40 shadow-sm">
+      <div class="flex items-center gap-gutter-lg">
+        <div class="flex items-center gap-gutter-sm btn-glass-secondary px-gutter-md py-1.5 rounded-xl cursor-pointer">
+          <span class="material-symbols-outlined text-emerald-700 text-[18px]">store</span>
+          <span class="font-label-lg text-label-lg text-on-surface font-semibold">EyeQMart — Pune Flagship #104, Pune</span>
+          <span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+        </div>
+        <div class="flex items-center gap-gutter-xs glass-panel px-3 py-1 rounded-full border border-emerald-500/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-emerald-800 font-semibold">Live • All Edge Nodes Active</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="hidden md:flex items-center gap-gutter-xs font-label-md text-label-md text-slate-700 font-mono glass-panel px-3.5 py-1.5 rounded-xl border border-slate-200/80 shadow-sm" id="headerClock">
+          <span class="material-symbols-outlined text-[18px] text-emerald-600">schedule</span>
+          <span>Thu, Oct 24 • 14:32 IST</span>
+        </div>
+        <button aria-label="Notifications" class="relative p-2 rounded-xl text-slate-700 btn-glass-secondary" data-jump-tab="alerts">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+        </button>
+        <button class="flex items-center gap-gutter-sm pl-gutter-sm btn-glass-secondary px-3 py-1.5 rounded-xl" id="exportReportBtn" title="View Shift Summary">
+          <img alt="Atharva profile" class="w-8 h-8 rounded-full object-cover shadow-sm ring-2 ring-emerald-500/50" src="assets/vikram_malhotra.jpg"/>
+          <div class="hidden lg:flex flex-col text-left">
+            <span class="font-label-sm text-label-sm text-slate-900 leading-tight font-bold">Atharva</span>
+            <span class="font-label-sm text-label-sm text-emerald-700 leading-tight font-semibold">Store Owner</span>
+          </div>
+        </button>
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT VIEWS CONTAINER ================= -->
+    <main class="w-full pt-topbar-height bg-slate-50/60 min-h-screen">
+      <div class="flex flex-col w-full p-gutter-lg space-y-gutter-lg">
+
+        <!-- ===================================================================
+             TAB 1: OVERVIEW (EXECUTIVE SUMMARY COCKPIT)
+             =================================================================== -->
+        <section class="tab-view block space-y-gutter-lg" id="tab-overview">
+          <!-- Overview Liquid Glass Hero Header -->
+          <div class="hero-liquid-glass p-gutter-lg flex flex-col md:flex-row md:items-center justify-between gap-gutter-md">
+            <div>
+              <div class="flex items-center gap-gutter-sm">
+                <span class="font-label-sm text-label-sm text-emerald-900 uppercase tracking-wider font-bold bg-emerald-100/80 px-2.5 py-0.5 rounded-md border border-emerald-200">Operational Cockpit</span>
+                <span class="text-slate-400 font-label-sm text-label-sm">/</span>
+                <span class="font-label-sm text-label-sm text-slate-600 font-semibold">EyeQ Executive Summary</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg text-slate-900 mt-1.5 font-bold tracking-tight">Pune Flagship — Real-Time Operations</h1>
+              <p class="text-xs text-slate-600 mt-1 font-medium">Liquid Intelligence Monitoring • 12 Edge Surveillance Nodes Connected</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="btn-glass-primary px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 shadow-lg hover:scale-105 transition-all" id="simVoidHeroBtn">
+                <span class="material-symbols-outlined text-[18px] text-amber-400 animate-pulse">center_focus_strong</span>
+                <span>Run PyTorch YOLO (best.pt) Void Detector</span>
+              </button>
+              <span class="flex items-center gap-2 text-xs font-bold text-emerald-900 glass-panel px-4 py-2.5 rounded-xl border border-emerald-500/40 shadow-sm" id="aiServiceStatusBadge">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                AI Service: Online (best.pt + YOLOv4)
+              </span>
+            </div>
+          </div>
+
+          <!-- Top Row: 4 Metric Cards (Isomorphic Glass Cards) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter-base">
+            <!-- KPI 1: Active Occupancy -->
+            <div class="iso-card p-gutter-base rounded-2xl flex flex-col justify-between cursor-pointer" data-jump-tab="floor-and-heatmap">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Active In-Store Occupancy</span>
+                <span class="material-symbols-outlined text-[20px] text-emerald-600 bg-emerald-50 p-1.5 rounded-lg border border-emerald-200/50">group</span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="font-metric-display text-metric-display text-on-surface font-bold font-mono" id="occupancyCount">72</span>
+                <span class="font-label-md text-label-md text-on-surface-variant font-medium">/ 210 safe cap</span>
+              </div>
+              <div class="mt-3">
+                <div class="w-full bg-slate-200/80 h-2 rounded-full overflow-hidden p-0.5 border border-white">
+                  <div class="bg-gradient-to-r from-emerald-500 to-teal-600 h-full rounded-full transition-all duration-500 shadow-sm" id="occupancyBar" style="width: 34%"></div>
+                </div>
+                <div class="flex justify-between items-center mt-1.5 text-[11px] text-on-surface-variant">
+                  <span class="font-medium" id="occupancyPercentLabel">34% of capacity</span>
+                  <span class="text-emerald-700 font-bold bg-emerald-100/60 px-1.5 py-0.5 rounded">Normal Flow</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- KPI 2: Total Footfall Today -->
+            <div class="iso-card p-gutter-base rounded-2xl flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Total Daily Footfall</span>
+                <span class="material-symbols-outlined text-[20px] text-blue-600 bg-blue-50 p-1.5 rounded-lg border border-blue-200/50">trending_up</span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="font-metric-display text-metric-display text-on-surface font-bold font-mono" id="footfallCount">247</span>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200 shadow-sm">
+                  +14.2%
+                </span>
+              </div>
+              <div class="mt-3 flex items-center justify-between pt-1 text-xs">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">vs yesterday (214)</span>
+                <span class="font-label-sm text-label-sm text-blue-700 font-bold">Peak 13:00-14:00 IST</span>
+              </div>
+            </div>
+
+            <!-- KPI 3: Avg Queue Wait -->
+            <div class="iso-card p-gutter-base rounded-2xl flex flex-col justify-between cursor-pointer" data-jump-tab="queue-analytics">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Avg Queue Wait</span>
+                <span class="material-symbols-outlined text-[20px] text-amber-600 bg-amber-50 p-1.5 rounded-lg border border-amber-200/50">timer</span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="font-metric-display text-metric-display text-on-surface font-bold font-mono" id="avgWaitDisplay">2m 45s</span>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-200 shadow-sm" id="avgWaitBadge">
+                  +45s vs Target
+                </span>
+              </div>
+              <div class="mt-3 flex items-center justify-between pt-1 text-xs">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">SLA Target: 2m 00s</span>
+                <span class="font-label-sm text-label-sm text-amber-800 font-bold" id="avgWaitSubtext">Surge Action Req</span>
+              </div>
+            </div>
+
+            <!-- KPI 4: Active Surveillance Feeds -->
+            <div class="iso-card p-gutter-base rounded-2xl flex flex-col justify-between cursor-pointer" data-jump-tab="settings">
+              <div class="flex items-center justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Surveillance Telemetry</span>
+                <span class="material-symbols-outlined text-[20px] text-teal-600 bg-teal-50 p-1.5 rounded-lg border border-teal-200/50">videocam</span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="font-metric-display text-metric-display text-on-surface font-bold font-mono">12 / 12</span>
+                <span class="font-label-md text-label-md text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">Online</span>
+              </div>
+              <div class="mt-3 flex items-center justify-between pt-1 text-xs">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Edge nodes processing</span>
+                <span class="font-label-sm text-label-sm text-emerald-800 font-bold">0 packet drop</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview Split: Left Preview & Footfall, Right Urgent Pulse & Alerts -->
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-base items-start">
+            <!-- Left Column: Live Surveillance Preview & Footfall Curve -->
+            <div class="xl:col-span-7 flex flex-col space-y-gutter-base">
+              <!-- Live Camera Mini Cockpit Card -->
+              <div class="glass-panel rounded-2xl shadow-md p-gutter-base border border-white/60">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-error rec-pulse"></span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Active CCTV Surveillance Feed</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">CAM-01 · Main Sales Floor & Entry</span>
+                  </div>
+                  <button class="btn-glass-secondary px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1" data-jump-tab="live-cameras">
+                    <span>Open Live Screening Center</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </button>
+                </div>
+                <!-- Mini Video Stream in Overview -->
+                <div class="relative w-full aspect-[21/9] bg-slate-950 rounded-xl overflow-hidden cursor-pointer group shadow-inner" data-jump-tab="live-cameras">
+                  <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="assets/cctv/realcctv.mp4"></video>
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-3 left-3 flex items-center gap-2 text-surface text-xs font-mono">
+                    <span class="bg-slate-900/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10 font-medium">CAM-01 · 82 Shoppers Detected</span>
+                    <span class="text-emerald-400 font-semibold">1080p 30 FPS</span>
+                  </div>
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-slate-950/40 backdrop-blur-[3px]">
+                    <span class="btn-glass-primary px-4 py-2 rounded-xl shadow-xl font-label-md font-bold text-xs flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[18px] text-emerald-400">visibility</span>
+                      Launch Full Screening Suite
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footfall Curve Card -->
+              <div class="glass-panel p-gutter-base rounded-2xl shadow-md border border-white/60">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px] text-emerald-600 bg-emerald-50 p-1 rounded-md">analytics</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Daily Footfall Dynamic Curve</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-emerald-800 font-bold bg-emerald-100/70 px-2 py-0.5 rounded-md" id="chartDeltaBadge">+14.2% Today</span>
+                    <div class="flex rounded-lg bg-slate-200/60 p-0.5 text-xs font-medium">
+                      <button class="px-2.5 py-1 rounded-md bg-slate-900 text-surface font-semibold shadow-sm transition-all" data-chart-range="today">Today</button>
+                      <button class="px-2.5 py-1 rounded-md text-on-surface-variant font-medium hover:text-on-surface transition-all" data-chart-range="yesterday">Yesterday</button>
+                    </div>
+                  </div>
+                </div>
+                <p class="font-label-sm text-label-sm text-on-surface-variant mb-2 font-medium">Hourly customer flow vs benchmark store capacity (Pune Flagship).</p>
+                <div class="w-full h-32 relative" id="footfallChartContainer">
+                  <svg class="w-full h-full overflow-visible text-secondary" preserveAspectRatio="none" viewBox="0 0 400 120">
+                    <defs>
+                      <linearGradient id="curveGradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#515f74" stop-opacity="0.18"></stop>
+                        <stop offset="100%" stop-color="#515f74" stop-opacity="0.0"></stop>
+                      </linearGradient>
+                    </defs>
+                    <line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="400" y1="20" y2="20"></line>
+                    <line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="400" y1="60" y2="60"></line>
+                    <line stroke="#e5eeff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="400" y1="100" y2="100"></line>
+                    <polygon fill="url(#curveGradient)" points="0,110 30,105 70,95 110,80 150,55 190,40 230,30 270,42 310,65 350,85 390,92 400,95 400,120 0,120"></polygon>
+                    <path d="M 0 110 Q 30 105, 70 95 T 150 55 T 230 30 T 310 65 T 390 92 L 400 95" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+                    <path d="M 0 115 Q 70 102, 150 70 T 230 45 T 310 75 T 400 105" fill="none" stroke="#94a3b8" stroke-dasharray="4 4" stroke-width="1.5"></path>
+                    <circle cx="230" cy="30" fill="#000000" r="4" stroke="#ffffff" stroke-width="2"></circle>
+                  </svg>
+                  <div class="absolute top-2 left-[54%] -translate-x-1/2 bg-slate-900 text-surface px-2 py-0.5 rounded-md font-label-sm text-[10px] shadow pointer-events-none font-mono" id="chartPeakTag">
+                    Peak: 312 / hr at 13:00
+                  </div>
+                  <div class="chart-tooltip opacity-0" id="chartTooltip"></div>
+                </div>
+                <div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant pt-2 font-mono">
+                  <span>09:00</span>
+                  <span>11:00</span>
+                  <span class="font-bold text-emerald-700">13:00 (Peak)</span>
+                  <span>15:00</span>
+                  <span>17:00</span>
+                  <span>19:00</span>
+                  <span>21:00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Priority AI Surge & Urgent Notifications -->
+            <div class="xl:col-span-5 flex flex-col space-y-gutter-base">
+              <!-- Surge Mitigation Banner -->
+              <div class="glass-panel p-gutter-base rounded-2xl shadow-md border border-white/60 space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px] text-amber-600 bg-amber-50 p-1 rounded-md">point_of_sale</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Checkout Surge Prediction</span>
+                  </div>
+                  <span class="text-xs text-amber-900 font-mono font-bold bg-amber-100 px-2 py-0.5 rounded-md border border-amber-200">T-Minus 8m</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-300/50 flex items-start gap-3" id="aiSurgeCard">
+                  <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <span class="material-symbols-outlined text-[20px]">auto_graph</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <span class="font-label-sm text-label-sm font-bold text-amber-900 uppercase tracking-wider">AI Surge Alert</span>
+                    <p class="font-body-sm text-body-sm text-on-surface mt-0.5 font-medium">
+                      Predicted surge at Billing: <span class="font-bold text-red-600">+14 shoppers in 8 mins</span>. Barcode scan delay on Aashirvaad Atta at Counter 3.
+                    </p>
+                    <div class="mt-2.5 flex items-center gap-2">
+                      <button class="btn-glass-primary px-3 py-1.5 rounded-xl font-label-sm text-xs font-bold shadow-md active:scale-95" id="openCounter4Btn">
+                        Open Counter 4 Now
+                      </button>
+                      <button class="btn-glass-secondary px-3 py-1.5 rounded-xl text-xs font-semibold" data-jump-tab="queue-analytics">
+                        Inspect All Lanes →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- High Priority Alerts Preview -->
+              <div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm border border-slate-100/60 flex flex-col">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px] text-on-surface">notifications_active</span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Active Operational Incidents</span>
+                  </div>
+                  <button class="text-xs font-semibold text-primary hover:underline" data-jump-tab="alerts">
+                    View All (3) →
+                  </button>
+                </div>
+                <div class="space-y-2.5">
+                  <div class="p-2.5 rounded-lg bg-[#FEF2F2] border border-red-200/60 flex items-start gap-2.5">
+                    <div class="w-6 h-6 rounded bg-[#FEE2E2] text-[#991B1B] flex items-center justify-center shrink-0 mt-0.5">
+                      <span class="material-symbols-outlined text-[16px]">warning</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between">
+                        <span class="font-label-sm text-label-sm font-semibold text-on-surface">Billing Counter 3 Congestion</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant font-mono">2m ago</span>
+                      </div>
+                      <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Queue exceeded SLA target (4m 10s vs 2m). Atta barcode check required.</p>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-[#FFFBEB] border border-amber-200/60 flex items-start gap-2.5">
+                    <div class="w-6 h-6 rounded bg-[#FDE68A] text-[#92400E] flex items-center justify-center shrink-0 mt-0.5">
+                      <span class="material-symbols-outlined text-[16px]">inventory</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between">
+                        <span class="font-label-sm text-label-sm font-semibold text-[#92400E]">Shelf Restock Required</span>
+                        <span class="font-label-sm text-label-sm text-[#92400E]/80 font-mono">14m ago</span>
+                      </div>
+                      <p class="font-body-sm text-body-sm text-[#92400E] mt-0.5">Aisle 3 Coolers: Amul Taaza Toned Milk (1L) depleted below 10%.</p>
+                      <button class="mt-1.5 text-xs font-semibold text-[#92400E] hover:underline" data-jump-tab="inventory">
+                        Go to Inventory to Dispatch →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 2: LIVE CAMERAS (DEDICATED LIVE SCREENING STREAM)
+             =================================================================== -->
+        <section class="tab-view hidden space-y-gutter-lg" id="tab-live-cameras">
+          <!-- Live Screening Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-md pb-1">
+            <div>
+              <div class="flex items-center gap-gutter-sm">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Surveillance & Spatial Vision</span>
+                <span class="text-outline-variant font-label-sm text-label-sm">/</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Live Screening Center</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5 font-semibold tracking-tight" id="camHeaderTitle">Live Screening — Main Sales Floor (CAM-01)</h1>
+            </div>
+            <!-- Live Screening View Mode & Actions -->
+            <div class="flex items-center gap-2">
+              <div class="flex glass-panel p-1 rounded-xl border border-white/60 shadow-sm">
+                <button class="btn-glass-primary px-3 py-1.5 rounded-lg font-label-md font-bold text-xs shadow-md" id="viewModeSingle">Single Feed</button>
+                <button class="btn-glass-secondary px-3 py-1.5 rounded-lg font-label-md font-semibold text-xs" id="viewModeQuad">3-Camera Grid</button>
+              </div>
+              <button class="btn-glass-primary p-2 rounded-xl text-surface shadow-md" id="neuralToggleBtn" title="Toggle AI Neural Overlay">
+                <span class="material-symbols-outlined text-[18px]">polyline</span>
+              </button>
+              <button class="btn-glass-secondary p-2 rounded-xl text-on-surface" id="snapshotBtn" title="Capture Snapshot">
+                <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+              </button>
+              <button class="btn-glass-secondary p-2 rounded-xl text-on-surface" id="fullscreenBtn" title="Fullscreen Viewport">
+                <span class="material-symbols-outlined text-[18px]">fullscreen</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- SINGLE FOCUSED FEED CONTAINER -->
+          <div class="block space-y-gutter-base" id="singleCameraContainer">
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col border border-slate-100/60">
+              <!-- Video Frame Viewport with HUD Overlays -->
+              <div class="relative w-full aspect-[16/9] bg-primary-container overflow-hidden group select-none" id="cameraViewport">
+                <!-- Working Looping Video Stream -->
+                <video id="cameraVideo" autoplay loop muted playsinline class="w-full h-full object-cover select-none transition-opacity duration-300" src="assets/cctv/realcctv.mp4" data-active-src="assets/cctv/realcctv.mp4">
+                  <source src="assets/cctv/realcctv.mp4" type="video/mp4">
+                </video>
+                <img id="cameraImage" class="w-full h-full object-cover select-none transition-opacity duration-300 hidden" src="">
+                
+                <!-- CCTV Scanlines -->
+                <div class="absolute inset-0 cctv-scanlines pointer-events-none opacity-40"></div>
+
+                <!-- Top Left OSD HUD Coordinates -->
+                <div class="absolute top-3 left-3 flex items-center gap-3 pointer-events-none">
+                  <span class="bg-primary/80 backdrop-blur-sm text-surface px-2 py-0.5 rounded font-label-sm text-label-sm tracking-wider font-mono shadow-sm" id="osdCamTitle">
+                    CAM-01 [FOV: 98° S-E]
+                  </span>
+                  <span class="text-surface font-label-sm text-label-sm drop-shadow-sm font-mono tracking-tight" id="liveTimestamp">
+                    14:32:48.104 IST
+                  </span>
+                </div>
+
+                <!-- Top Right AI Target Detection Pill -->
+                <div class="absolute top-3 right-3 flex items-center gap-2 pointer-events-none">
+                  <span class="bg-primary/80 backdrop-blur-sm text-on-tertiary-container px-2 py-0.5 rounded font-label-sm text-label-sm flex items-center gap-1 font-medium shadow-sm" id="activeTargetsBadge">
+                    <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+                    AI Bounding Box: Active (8 Targets)
+                  </span>
+                </div>
+
+                <!-- Dynamic Neural Vision Bounding Box Overlay Container -->
+                <div class="absolute inset-0 pointer-events-none" id="boundingContainer"></div>
+
+                <!-- Viewport HUD Bottom Control Strip -->
+                <div class="absolute bottom-3 inset-x-3 flex items-center justify-between bg-primary/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-surface opacity-90 transition-opacity">
+                  <div class="flex items-center gap-3 font-label-sm text-label-sm">
+                    <span class="flex items-center gap-1 text-surface/90">
+                      <span class="material-symbols-outlined text-[15px] text-on-tertiary-container">center_focus_strong</span>
+                      Auto-Tracking
+                    </span>
+                    <span class="text-surface/40">|</span>
+                    <span class="text-surface/90 font-mono" id="ptzLabel">PTZ: X:241 Y:088 Z:1.2X</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button class="hover:text-surface text-surface/80 p-1 transition-colors" id="stepBackBtn" title="Step Back 10s">
+                      <span class="material-symbols-outlined text-[16px]">replay_10</span>
+                    </button>
+                    <button class="hover:text-surface text-on-tertiary-container font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface/10 flex items-center gap-1 transition-all" id="syncBtn" title="Live Sync">
+                      <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container" id="syncPill"></span>
+                      SYNC
+                    </button>
+                    <button class="hover:text-surface text-surface/80 p-1 transition-colors" id="audioBtn" title="Toggle Audio Feed">
+                      <span class="material-symbols-outlined text-[16px]">volume_off</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Camera Timeline Scrubber Bar -->
+              <div class="p-gutter-base pt-3 bg-surface-container-lowest">
+                <div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="font-medium text-on-surface">Time Playback Buffer</span>
+                    <span class="text-on-surface-variant font-mono">14:00 - 14:32 IST</span>
+                  </div>
+                  <span class="text-on-surface font-mono font-medium">00:32:48 Live Stream</span>
+                </div>
+                <div class="relative w-full h-5 bg-surface-container-low rounded cursor-pointer flex items-center px-1">
+                  <div class="absolute left-[15%] w-[8%] h-2.5 bg-secondary-container rounded-sm" title="Turnstile Entry Surge"></div>
+                  <div class="absolute left-[45%] w-[12%] h-2.5 bg-[#fde68a] rounded-sm" title="Peak Aisles Occupancy"></div>
+                  <div class="absolute left-[78%] w-[6%] h-2.5 bg-[#fecaca] rounded-sm" title="Billing Congestion"></div>
+                  <div class="w-full h-1 bg-surface-container-high rounded relative">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-primary rounded-full shadow"></div>
+                  </div>
+                </div>
+
+                <!-- Quick Thumbnails Camera Selector -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-sm mt-3.5">
+                  <div class="cursor-pointer p-1.5 rounded-lg bg-surface-container-high ring-1 ring-primary transition-all shadow-sm" data-cam-card="cam-01">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm font-semibold text-on-surface">CAM 01</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                    </div>
+                    <p class="font-label-sm text-label-sm text-on-surface truncate font-medium">Main Sales Floor</p>
+                    <span class="text-[10px] text-on-tertiary-container font-medium block mt-0.5">Active (realcctv.mp4)</span>
+                  </div>
+
+                  <div class="cursor-pointer p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all" data-cam-card="cam-02">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="font-label-sm text-label-sm font-semibold text-on-surface">CAM 02</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                    </div>
+                    <p class="font-label-sm text-label-sm text-on-surface-variant truncate font-medium">Produce & Grocery</p>
+                    <span class="text-[10px] text-on-surface-variant block mt-0.5">voidvdo.mp4</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-CAMERA GRID CONTAINER (FOOTFALL + VOID DETECTION FEEDS) -->
+          <div class="hidden grid grid-cols-1 md:grid-cols-2 gap-gutter-base" id="quadCameraContainer">
+            <!-- Cam 1 -->
+            <div class="quad-cam-card bg-primary-container relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer border border-slate-700/40 group shadow-sm" data-quad-cam="cam-01">
+              <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="assets/cctv/realcctv.mp4"></video>
+              <div class="absolute top-2 left-2 bg-primary/85 text-surface px-2 py-0.5 rounded text-xs font-mono backdrop-blur-sm">CAM 01 · Main Sales Floor & Entry</div>
+              <div class="absolute bottom-2 right-2 bg-primary/85 text-on-tertiary-container px-2 py-0.5 rounded text-xs font-mono backdrop-blur-sm font-semibold">82 Active</div>
+            </div>
+            <!-- Cam 2 -->
+            <div class="quad-cam-card bg-primary-container relative aspect-[16/9] overflow-hidden rounded-xl cursor-pointer border border-slate-700/40 group shadow-sm" data-quad-cam="cam-02">
+              <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="assets/cctv/voidvdo.mp4"></video>
+              <div class="absolute top-2 left-2 bg-primary/85 text-surface px-2 py-0.5 rounded text-xs font-mono backdrop-blur-sm">CAM 02 · Fresh Produce & Grocery</div>
+              <div class="absolute bottom-2 right-2 bg-slate-900/90 text-red-400 border border-red-500/40 px-2 py-0.5 rounded text-xs font-mono backdrop-blur-sm font-semibold">3 Voids Detected</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 3: FLOOR & HEATMAP (SPATIAL INTELLIGENCE)
+             =================================================================== -->
+        <section class="tab-view hidden space-y-gutter-lg" id="tab-floor-and-heatmap">
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-md pb-1">
+            <div>
+              <div class="flex items-center gap-gutter-sm">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Spatial Intelligence</span>
+                <span class="text-outline-variant font-label-sm text-label-sm">/</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Store Floor Plan & Dwell Matrix</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5 font-semibold tracking-tight">Pune Store Spatial Heatmap & Zone Analytics</h1>
+            </div>
+            <div class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-slate-100 shadow-sm">
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>Fluid (&lt;2m)</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#d5e3fc]"></span>Med (2-5m)</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#f59e0b]"></span>High Dwell (5m+)</span>
+            </div>
+          </div>
+
+          <!-- 2D Architectural Layout Schematic -->
+          <div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm border border-slate-100/60 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">2D Department Architectural Schematic (EyeQMart #104)</span>
+              <span class="text-xs text-on-surface-variant font-mono">Scale: 1:100 · Store Area: 14,200 sq ft</span>
+            </div>
+            <div class="relative w-full h-64 bg-slate-50 border border-dashed border-slate-300 rounded-xl p-4 flex items-center justify-center">
+              <div class="grid grid-cols-4 gap-4 w-full h-full">
+                <div class="border-2 border-emerald-500/60 bg-emerald-50/50 rounded-lg p-3 flex flex-col justify-between cursor-pointer hover:bg-emerald-100/50 transition-colors" data-zone-key="zoneA">
+                  <span class="font-label-sm font-semibold text-emerald-800">Zone A: Entrance & Foyer</span>
+                  <div class="text-xs text-emerald-700">Dwell: 1.8 min · Pass: 88%</div>
+                  <span class="text-[10px] bg-emerald-200 text-emerald-800 px-1.5 py-0.5 rounded self-start font-mono font-semibold">CAM-01</span>
+                </div>
+                <div class="border-2 border-blue-500/60 bg-blue-50/50 rounded-lg p-3 flex flex-col justify-between cursor-pointer hover:bg-blue-100/50 transition-colors" data-zone-key="zoneB">
+                  <span class="font-label-sm font-semibold text-blue-800">Zone B: Fresh Produce & Grains</span>
+                  <div class="text-xs text-blue-700">Dwell: 3.2 min · 34 Shoppers</div>
+                  <span class="text-[10px] bg-blue-200 text-blue-800 px-1.5 py-0.5 rounded self-start font-mono font-semibold">CAM-02</span>
+                </div>
+                <div class="border-2 border-amber-500 bg-amber-50 rounded-lg p-3 flex flex-col justify-between cursor-pointer hover:bg-amber-100 transition-colors warning-shimmer" data-zone-key="zoneC">
+                  <span class="font-label-sm font-semibold text-amber-800">Zone C: Dairy & Confectionery</span>
+                  <div class="text-xs text-amber-700 font-semibold">Dwell: 8.4 min ⚠ (Amul Milk Display)</div>
+                  <span class="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded self-start font-mono font-semibold">CAM-04</span>
+                </div>
+                <div class="border-2 border-purple-500/60 bg-purple-50/50 rounded-lg p-3 flex flex-col justify-between cursor-pointer hover:bg-purple-100/50 transition-colors" data-zone-key="zoneD">
+                  <span class="font-label-sm font-semibold text-purple-800">Zone D: Billing Counters & POS</span>
+                  <div class="text-xs text-purple-700">Dwell: 4.8 min · 19 Queued</div>
+                  <span class="text-[10px] bg-purple-200 text-purple-800 px-1.5 py-0.5 rounded self-start font-mono font-semibold">CAM-02</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone Breakdown Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-base">
+            <div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-slate-100/60 zone-card flex flex-col justify-between" data-zone-key="zoneA">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-label-md font-semibold text-on-surface">Zone A: Entrance Turnstiles</span>
+                <span class="px-1.5 py-0.5 rounded font-label-sm bg-[#ECFDF5] text-[#065F46] font-medium">Fluid</span>
+              </div>
+              <div class="space-y-1 text-xs text-on-surface-variant">
+                <div class="flex justify-between"><span>Avg Dwell:</span><span class="font-mono font-semibold text-on-surface">1.8 min</span></div>
+                <div class="flex justify-between"><span>Pass-through:</span><span class="font-semibold text-on-surface">88%</span></div>
+              </div>
+              <div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-on-tertiary-container h-full rounded-full" style="width: 25%"></div>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-slate-100/60 zone-card flex flex-col justify-between" data-zone-key="zoneB">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-label-md font-semibold text-on-surface">Zone B: Produce & Staples</span>
+                <span class="px-1.5 py-0.5 rounded font-label-sm bg-[#ECFDF5] text-[#065F46] font-medium">Normal</span>
+              </div>
+              <div class="space-y-1 text-xs text-on-surface-variant">
+                <div class="flex justify-between"><span>Avg Dwell:</span><span class="font-mono font-semibold text-on-surface">3.2 min</span></div>
+                <div class="flex justify-between"><span>Active Shoppers:</span><span class="font-semibold text-on-surface">34</span></div>
+              </div>
+              <div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-secondary h-full rounded-full" style="width: 45%"></div>
+              </div>
+            </div>
+
+            <div class="bg-[#FFFBEB] p-4 rounded-xl shadow-sm border border-amber-300 zone-card warning-shimmer flex flex-col justify-between" data-zone-key="zoneC">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-label-md font-semibold text-[#92400E]">Zone C: Dairy & Snacks</span>
+                <span class="px-1.5 py-0.5 rounded font-label-sm bg-[#FDE68A] text-[#92400E] font-medium">High Dwell</span>
+              </div>
+              <div class="space-y-1 text-xs text-[#92400E]">
+                <div class="flex justify-between"><span>Avg Dwell:</span><span class="font-mono font-bold">8.4 min</span></div>
+                <div class="flex justify-between"><span>Restock Bottleneck:</span><span class="font-bold">Amul Taaza Display</span></div>
+              </div>
+              <div class="w-full bg-[#FDE68A] h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-[#D97706] h-full rounded-full" style="width: 84%"></div>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-slate-100/60 zone-card flex flex-col justify-between" data-zone-key="zoneD">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-label-md font-semibold text-on-surface">Zone D: Billing Counters</span>
+                <span class="px-1.5 py-0.5 rounded font-label-sm bg-secondary-container text-on-secondary-fixed font-medium">Moderate</span>
+              </div>
+              <div class="space-y-1 text-xs text-on-surface-variant">
+                <div class="flex justify-between"><span>Avg Dwell:</span><span class="font-mono font-semibold text-on-surface">4.8 min</span></div>
+                <div class="flex justify-between"><span>Shoppers Queued:</span><span class="font-semibold text-on-surface">19</span></div>
+              </div>
+              <div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-secondary h-full rounded-full" style="width: 62%"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 4: INVENTORY (INDIAN FMCG GROCERY & SHELF REPLENISHMENT)
+             =================================================================== -->
+        <section class="tab-view hidden space-y-gutter-lg" id="tab-inventory">
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-md pb-1">
+            <div>
+              <div class="flex items-center gap-gutter-sm">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Supply Chain & Shelf Vision</span>
+                <span class="text-outline-variant font-label-sm text-label-sm">/</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Real-Time Indian Grocery Stock</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5 font-semibold tracking-tight">On-Shelf Inventory & Automated Restock Dispatch</h1>
+            </div>
+          </div>
+
+          <!-- YOLOv8 Shelf Vision Live Model Output Showcase Card -->
+          <div class="glass-panel p-gutter-base rounded-2xl shadow-lg border border-blue-200 space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-200/50">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md">
+                  <span class="material-symbols-outlined text-[22px]">center_focus_strong</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">YOLOv8 Shelf Vision — Live Void Detection Simulator</h3>
+                  <p class="text-xs text-slate-600 font-medium">Automatic shelf empty space segmentation & model confidence scoring</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="btn-glass-primary px-4 py-2 rounded-xl text-xs font-bold shadow-md flex items-center gap-2" id="simVoidInvBtn">
+                  <span class="material-symbols-outlined text-[18px] text-amber-400 animate-spin">sync</span>
+                  <span>Trigger Void Detection Simulation</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Model Gallery & Active Detector -->
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-base items-center">
+              <div class="xl:col-span-6 relative aspect-[4/3] bg-slate-950 rounded-2xl overflow-hidden border border-blue-400/50 shadow-xl group">
+                <img id="activeVisionImg" src="assets/cctv/void full.png" alt="YOLOv8 Void Detection Shelf" class="w-full h-full object-cover transition-all duration-300"/>
+                
+                <!-- OSD Overlay Header -->
+                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-md text-white px-3 py-1 rounded-lg text-xs font-mono border border-white/20 shadow-md flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span id="activeVisionTitle">Shampoo & Personal Care Shelf (Aisle 3)</span>
+                </div>
+                
+                <div class="absolute bottom-3 right-3 bg-blue-950/90 backdrop-blur-md text-emerald-400 px-3 py-1 rounded-lg text-xs font-mono border border-blue-400/30 font-bold">
+                  YOLOv8-ShelfVision: Active
+                </div>
+              </div>
+
+              <!-- Live Model Bounding Box Metrics Breakdown -->
+              <div class="xl:col-span-6 space-y-3">
+                <div class="p-3.5 rounded-xl bg-blue-50/80 border border-blue-200">
+                  <span class="font-label-sm text-label-sm font-bold text-blue-900 uppercase tracking-wider block mb-1">Detected Void Coordinates & Bounding Boxes</span>
+                  <div class="space-y-2" id="visionMetricsList">
+                    <div class="flex items-center justify-between p-2.5 bg-white rounded-lg border border-blue-100 shadow-sm">
+                      <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                        <span class="font-mono text-xs font-bold text-blue-950">Void 0.44</span>
+                        <span class="text-xs text-slate-600 font-semibold">Top Right Rack (Dove Hair Care)</span>
+                      </div>
+                      <span class="text-xs font-bold font-mono text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Conf: 44%</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2.5 bg-white rounded-lg border border-blue-100 shadow-sm">
+                      <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                        <span class="font-mono text-xs font-bold text-blue-950">Void 0.56</span>
+                        <span class="text-xs text-slate-600 font-semibold">Bottom Left Rack (Dove Bar Soap)</span>
+                      </div>
+                      <span class="text-xs font-bold font-mono text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Conf: 56%</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2.5 bg-white rounded-lg border border-blue-100 shadow-sm">
+                      <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                        <span class="font-mono text-xs font-bold text-blue-950">Void 0.69</span>
+                        <span class="text-xs text-slate-600 font-semibold">Bottom Center Rack (Olay Moisturizer)</span>
+                      </div>
+                      <span class="text-xs font-bold font-mono text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Conf: 69%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Model Image Switcher Thumbnails -->
+                <div class="flex items-center gap-3 pt-1">
+                  <span class="text-xs font-bold text-slate-700">Sample Shelves:</span>
+                  <div class="flex gap-2 flex-wrap">
+                    <button class="w-14 h-11 rounded-lg overflow-hidden border-2 border-blue-600 shadow-sm focus:outline-none" data-select-vision-img="0" title="juices/coolers">
+                      <img src="assets/cctv/void full.png" class="w-full h-full object-cover"/>
+                    </button>
+                    <button class="w-14 h-11 rounded-lg overflow-hidden border border-slate-300 hover:border-blue-500 shadow-sm focus:outline-none" data-select-vision-img="1" title="detergents/cleaners">
+                      <img src="assets/cctv/void 1.jpeg" class="w-full h-full object-cover"/>
+                    </button>
+                    <button class="w-14 h-11 rounded-lg overflow-hidden border border-slate-300 hover:border-blue-500 shadow-sm focus:outline-none" data-select-vision-img="2" title="shampoo/personal care">
+                      <img src="assets/cctv/void 2.png" class="w-full h-full object-cover"/>
+                    </button>
+                    <button class="w-14 h-11 rounded-lg overflow-hidden border border-slate-300 hover:border-blue-500 shadow-sm focus:outline-none" data-select-vision-img="3" title="Snacks Shelf (Void 3)">
+                      <img src="assets/cctv/void 3.jpeg" class="w-full h-full object-cover"/>
+                    </button>
+                    <button class="w-14 h-11 rounded-lg overflow-hidden border border-slate-300 hover:border-blue-500 shadow-sm focus:outline-none" data-select-vision-img="4" title="Dairy Coolers (Void 4)">
+                      <img src="assets/cctv/void4 .jpeg" class="w-full h-full object-cover"/>
+                    </button>
+                    <button class="w-14 h-11 rounded-lg overflow-hidden border border-slate-300 hover:border-blue-500 shadow-sm focus:outline-none" data-select-vision-img="5" title="Personal Care (Void 5)">
+                      <img src="assets/cctv/void5.jpeg" class="w-full h-full object-cover"/>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Critical Restock Banner (Amul Taaza Milk) -->
+          <div class="p-4 rounded-xl bg-[#FFFBEB] border border-amber-300 flex items-center justify-between shadow-sm" id="criticalRestockBanner">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-[#FDE68A] text-[#92400E] flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[20px]">warning</span>
+              </div>
+              <div>
+                <span class="font-label-md font-bold text-[#92400E] block">Immediate Restock Required: Amul Taaza Toned Milk (1L)</span>
+                <span class="text-xs text-[#92400E]/80">Aisle 3 Coolers · 8 Units Remaining (10% Capacity) · Depleting at 14 units/hr · Price: ₹54</span>
+              </div>
+            </div>
+            <button class="px-3 py-1.5 rounded-lg bg-[#92400E] text-surface hover:bg-[#78350F] font-label-md text-xs font-semibold shadow transition-all active:scale-95" id="dispatchBannerBtn">
+              Acknowledge & Dispatch Associate
+            </button>
+          </div>
+
+          <!-- Search & Filter Controls -->
+          <div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm border border-slate-100/60 space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div class="relative w-full md:w-80">
+                <input class="w-full bg-surface-container-low text-on-surface px-3 py-1.5 pl-9 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-primary border border-slate-200" id="inventorySearchInput" placeholder="Search Indian grocery brand, SKU, or dept..." type="text"/>
+                <span class="material-symbols-outlined absolute left-2.5 top-2 text-[16px] text-on-surface-variant pointer-events-none">search</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 text-xs">
+                <button class="px-2.5 py-1 rounded bg-primary text-surface font-medium" data-dept-filter="all">All Items</button>
+                <button class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container" data-dept-filter="Dairy">Dairy</button>
+                <button class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container" data-dept-filter="Staples">Staples & Grains</button>
+                <button class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container" data-dept-filter="Snacks">Snacks & Biscuits</button>
+                <button class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container" data-dept-filter="Masalas">Masalas & Spices</button>
+                <button class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container" data-dept-filter="Home Care">Home Care</button>
+                <button class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-medium hover:bg-surface-container" data-dept-filter="Beverages">Beverages</button>
+              </div>
+            </div>
+
+            <!-- SKU Table -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-200 text-xs font-semibold uppercase text-on-surface-variant bg-surface-container-low/50">
+                    <th class="py-2.5 px-4">SKU</th>
+                    <th class="py-2.5 px-4">Product & Location</th>
+                    <th class="py-2.5 px-4">Department</th>
+                    <th class="py-2.5 px-4">Price (₹)</th>
+                    <th class="py-2.5 px-4">Stock Level</th>
+                    <th class="py-2.5 px-4">Depletion Rate</th>
+                    <th class="py-2.5 px-4">Status</th>
+                    <th class="py-2.5 px-4 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="inventoryTableBody">
+                  <!-- Dynamically rendered via inventoryManager.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 5: QUEUE ANALYTICS (CHECKOUT LANES & SURGE MITIGATION)
+             =================================================================== -->
+        <section class="tab-view hidden space-y-gutter-lg" id="tab-queue-analytics">
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-md pb-1">
+            <div>
+              <div class="flex items-center gap-gutter-sm">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Front-End Operations</span>
+                <span class="text-outline-variant font-label-sm text-label-sm">/</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">POS & Lane Dynamics</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5 font-semibold tracking-tight">Checkout Lanes & Queue Pulse Management</h1>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-on-surface-variant">Auto-Refresh Every 5s · Camera 03 Linked (Pune)</span>
+            </div>
+          </div>
+
+          <!-- Predictive Surge Mitigation Banner -->
+          <div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm border border-slate-100/60">
+            <div class="p-4 rounded-xl bg-secondary-container/40 flex items-start justify-between gap-4" id="aiSurgeCard">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[20px]">auto_graph</span>
+                </div>
+                <div>
+                  <span class="font-label-md font-bold text-on-secondary-fixed uppercase tracking-wider block">AI Predictive Surge Detected (T-Minus 8m)</span>
+                  <p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                    Store vision cameras detect a customer surge moving from Aisle 2 (Grains) and Aisle 3 (Dairy/Snacks) towards checkout. Barcode check delay on Aashirvaad Atta at Counter 3. Recommended: Dispatch associate <span class="font-semibold text-primary">Pooja R.</span> to activate Counter 04 Express.
+                  </p>
+                </div>
+              </div>
+              <button class="btn-glass-primary px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:bg-primary-container transition-all shrink-0 active:scale-95" id="activateLaneBtn">
+                Dispatch Pooja R. to Counter 4
+              </button>
+            </div>
+          </div>
+
+          <!-- Individual Counter Load Breakdown Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter-base">
+            <!-- Counter 1 -->
+            <div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-slate-100/60 flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></div>
+                  <span class="font-label-md font-semibold text-on-surface">Counter 01 (Cash/Card/UPI)</span>
+                </div>
+                <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-medium">Optimal</span>
+              </div>
+              <div class="space-y-1 text-xs text-on-surface-variant">
+                <div class="flex justify-between"><span>Staff:</span><span class="font-medium text-on-surface">Rohan M.</span></div>
+                <div class="flex justify-between"><span>Queue Depth:</span><span class="font-mono font-bold text-on-surface">3 in line</span></div>
+                <div class="flex justify-between"><span>Current Wait:</span><span class="font-mono font-bold text-on-surface">1m 50s</span></div>
+              </div>
+            </div>
+
+            <!-- Counter 2 -->
+            <div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-slate-100/60 flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></div>
+                  <span class="font-label-md font-semibold text-on-surface">Counter 02 (Card & UPI Only)</span>
+                </div>
+                <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-medium">Optimal</span>
+              </div>
+              <div class="space-y-1 text-xs text-on-surface-variant">
+                <div class="flex justify-between"><span>Staff:</span><span class="font-medium text-on-surface">Neha K.</span></div>
+                <div class="flex justify-between"><span>Queue Depth:</span><span class="font-mono font-bold text-on-surface">2 in line</span></div>
+                <div class="flex justify-between"><span>Current Wait:</span><span class="font-mono font-bold text-on-surface">1m 20s</span></div>
+              </div>
+            </div>
+
+            <!-- Counter 3 (Congested) -->
+            <div class="bg-[#FEF2F2] p-4 rounded-xl shadow-sm border border-red-200 flex flex-col justify-between" id="counter3Card">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-[#EF4444]" id="counter3Dot"></div>
+                  <span class="font-label-md font-semibold text-[#991B1B]">Counter 03 (Speed Lane)</span>
+                </div>
+                <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded font-bold">Congested ⚠</span>
+              </div>
+              <div class="space-y-1 text-xs text-[#991B1B]">
+                <div class="flex justify-between"><span>Staff:</span><span class="font-medium">Amit P. (Price Check on Atta)</span></div>
+                <div class="flex justify-between"><span>Queue Depth:</span><span class="font-mono font-bold" id="counter3Count">6 in line</span></div>
+                <div class="flex justify-between"><span>Current Wait:</span><span class="font-mono font-bold" id="counter3Wait">Wait: 4m 10s ⚠</span></div>
+              </div>
+            </div>
+
+            <!-- Counter 4 (Standby / Activatable) -->
+            <div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-slate-100/60 flex flex-col justify-between" id="counter4Card">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-outline-variant" id="counter4Dot"></div>
+                  <span class="font-label-md font-semibold text-on-surface">Counter 04 (Express)</span>
+                </div>
+                <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium">Standby</span>
+              </div>
+              <div class="space-y-1 text-xs text-on-surface-variant" id="counter4Content">
+                <div class="flex justify-between"><span>Status:</span><span class="font-medium text-on-surface">On Standby</span></div>
+                <div class="flex justify-between"><span>Available Staff:</span><span class="font-medium text-on-surface">Pooja R.</span></div>
+              </div>
+              <div class="mt-3 pt-2 border-t border-slate-100" id="counter4Right">
+                <button class="w-full py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-xs font-semibold hover:bg-primary hover:text-surface transition-all active:scale-95" id="activateLaneBtn">
+                  Activate Lane 4 (Pooja R.)
+                </button>
+              </div>
+            </div>
+
+            <!-- Self Checkout Kiosks -->
+            <div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-slate-100/60 flex flex-col justify-between">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></div>
+                  <span class="font-label-md font-semibold text-on-surface">Self-Checkout (8 Kiosks)</span>
+                </div>
+                <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-medium">Fluid</span>
+              </div>
+              <div class="space-y-1 text-xs text-on-surface-variant">
+                <div class="flex justify-between"><span>Host:</span><span class="font-medium text-on-surface">Priya S. (UPI Soundbox Active)</span></div>
+                <div class="flex justify-between"><span>Active Kiosks:</span><span class="font-mono font-bold text-on-surface">7 / 8 in use</span></div>
+                <div class="flex justify-between"><span>Avg Wait:</span><span class="font-mono font-bold text-on-surface">1m 05s</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 6: ALERTS (INCIDENT COMMAND CENTER)
+             =================================================================== -->
+        <section class="tab-view hidden space-y-gutter-lg" id="tab-alerts">
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-md pb-1">
+            <div>
+              <div class="flex items-center gap-gutter-sm">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Incident Command</span>
+                <span class="text-outline-variant font-label-sm text-label-sm">/</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Real-Time Operational Alerts</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5 font-semibold tracking-tight">Active Incidents & Operational Dispatch Log</h1>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-slate-200 text-xs font-semibold hover:bg-slate-50" id="filterStreamBtn">
+                Filter Severity
+              </button>
+            </div>
+          </div>
+
+          <!-- Alert Severity Quick Filters -->
+          <div class="flex gap-2">
+            <button class="px-3 py-1.5 rounded-lg bg-primary text-surface font-label-md text-xs font-medium" data-filter-severity="all">All Incidents</button>
+            <button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-xs font-medium hover:bg-surface-container" data-filter-severity="critical">Critical</button>
+            <button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-xs font-medium hover:bg-surface-container" data-filter-severity="warning">Warnings</button>
+            <button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-xs font-medium hover:bg-surface-container" data-filter-severity="info">Informational</button>
+          </div>
+
+          <!-- Active Alerts Container -->
+          <div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm border border-slate-100/60 space-y-3">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Incident Queue (Pune Store #104)</span>
+              <span class="bg-error text-on-error font-label-sm text-label-sm px-2 py-0.5 rounded-full font-medium" id="alertsCountBadge">3 Active</span>
+            </div>
+            <div class="space-y-3" id="alertsListContainer">
+              <!-- Rendered dynamically via alertsManager.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 7: SETTINGS (EDGE FLEET NODES & SLA CONFIG)
+             =================================================================== -->
+        <section class="tab-view hidden space-y-gutter-lg" id="tab-settings">
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-gutter-md pb-1">
+            <div>
+              <div class="flex items-center gap-gutter-sm">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">System Administration</span>
+                <span class="text-outline-variant font-label-sm text-label-sm">/</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">EyeQ Edge Fleet & SLA Parameters</span>
+              </div>
+              <h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5 font-semibold tracking-tight">System Telemetry & Operational Settings</h1>
+            </div>
+            <button class="px-3.5 py-1.5 bg-primary text-on-primary rounded-lg font-label-md text-xs font-medium hover:bg-slate-800 transition-colors" id="exportTelemetryBtn">
+              Export Telemetry JSON
+            </button>
+          </div>
+
+          <!-- Edge Node Fleet Table -->
+          <div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm border border-slate-100/60 space-y-3">
+            <span class="font-headline-sm text-headline-sm text-on-surface font-semibold block">EyeQ Surveillance Edge Fleet (12 Active Nodes — Pune Store)</span>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-200 text-xs font-semibold uppercase text-on-surface-variant bg-surface-container-low/50">
+                    <th class="py-2.5 px-4">Node ID</th>
+                    <th class="py-2.5 px-4">Location</th>
+                    <th class="py-2.5 px-4">Internal IP</th>
+                    <th class="py-2.5 px-4">Latency</th>
+                    <th class="py-2.5 px-4">Stream FPS</th>
+                    <th class="py-2.5 px-4">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="text-sm">
+                  <tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-mono font-semibold">NODE-01</td><td class="py-2.5 px-4 font-medium">Foyer Turnstiles & Security</td><td class="py-2.5 px-4 font-mono text-xs">192.168.4.101</td><td class="py-2.5 px-4 font-mono text-xs">18ms</td><td class="py-2.5 px-4 font-mono text-xs">30.0 FPS</td><td class="py-2.5 px-4"><span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-xs font-medium">Healthy</span></td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-mono font-semibold">NODE-02</td><td class="py-2.5 px-4 font-medium">Fresh Produce & Fruits Section</td><td class="py-2.5 px-4 font-mono text-xs">192.168.4.102</td><td class="py-2.5 px-4 font-mono text-xs">22ms</td><td class="py-2.5 px-4 font-mono text-xs">29.9 FPS</td><td class="py-2.5 px-4"><span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-xs font-medium">Healthy</span></td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-mono font-semibold">NODE-03</td><td class="py-2.5 px-4 font-medium">POS Billing Counters 1-4</td><td class="py-2.5 px-4 font-mono text-xs">192.168.4.103</td><td class="py-2.5 px-4 font-mono text-xs">25ms</td><td class="py-2.5 px-4 font-mono text-xs">30.0 FPS</td><td class="py-2.5 px-4"><span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-xs font-medium">Healthy</span></td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-mono font-semibold">NODE-04</td><td class="py-2.5 px-4 font-medium">Main Sales Floor West</td><td class="py-2.5 px-4 font-mono text-xs">192.168.4.104</td><td class="py-2.5 px-4 font-mono text-xs">24ms</td><td class="py-2.5 px-4 font-mono text-xs">30.0 FPS</td><td class="py-2.5 px-4"><span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-xs font-medium">Healthy</span></td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-mono font-semibold">NODE-05</td><td class="py-2.5 px-4 font-medium">Dairy Coolers & Staples (Aisle 3)</td><td class="py-2.5 px-4 font-mono text-xs">192.168.4.105</td><td class="py-2.5 px-4 font-mono text-xs">21ms</td><td class="py-2.5 px-4 font-mono text-xs">30.0 FPS</td><td class="py-2.5 px-4"><span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-xs font-medium">Healthy</span></td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-mono font-semibold">NODE-06</td><td class="py-2.5 px-4 font-medium">Confectionery & Spices Island</td><td class="py-2.5 px-4 font-mono text-xs">192.168.4.106</td><td class="py-2.5 px-4 font-mono text-xs">26ms</td><td class="py-2.5 px-4 font-mono text-xs">29.8 FPS</td><td class="py-2.5 px-4"><span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-xs font-medium">Healthy</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Telegram Bot Integration Status & Backend Configuration Card -->
+          <div class="glass-panel p-gutter-base rounded-2xl shadow-md border border-blue-200 space-y-4">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-200/60">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">send</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm font-bold text-slate-900">Telegram Bot Integration (Backend Config)</h3>
+                  <p class="text-xs text-slate-600 font-medium">Automatic dispatch of YOLOv8 shelf void & queue alerts via Telegram Bot API</p>
+                </div>
+              </div>
+              <span class="text-xs font-bold font-mono text-emerald-800 bg-emerald-100 px-3 py-1 rounded-lg border border-emerald-200 flex items-center gap-1.5" id="tgStatusBadge">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Backend Config Linked
+              </span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-blue-50/80 border border-blue-200/80 space-y-2 text-xs text-slate-700">
+              <div class="flex justify-between items-center"><span class="font-bold">Configuration Source:</span><span class="font-mono bg-blue-100 text-blue-900 px-2 py-0.5 rounded font-semibold">js/config.js</span></div>
+              <div class="flex justify-between items-center"><span class="font-bold">Bot API Status:</span><span class="font-mono text-emerald-700 font-bold" id="tgBotApiStatus">Connected & Active</span></div>
+              <div class="flex justify-between items-center"><span class="font-bold">Chat Channel ID:</span><span class="font-mono text-slate-800 font-semibold" id="tgChatIdDisplay">Configured in js/config.js</span></div>
+            </div>
+
+            <div class="flex items-center gap-3 pt-1">
+              <button class="btn-glass-primary px-4 py-2.5 rounded-xl text-xs font-bold shadow-md flex items-center gap-2" id="testTelegramBotBtn">
+                <span class="material-symbols-outlined text-[18px] text-blue-300">send</span>
+                <span>Send Test Alert to Telegram</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Store SLA Parameters Form -->
+          <div class="bg-surface-container-lowest p-gutter-base rounded-xl shadow-sm border border-slate-100/60 space-y-4">
+            <span class="font-headline-sm text-headline-sm text-on-surface font-semibold block">Store Operational SLA Parameters</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-on-surface-variant mb-1">Target Average Queue Wait Time (Seconds)</label>
+                <input class="w-full bg-surface-container-low text-on-surface px-3 py-2 rounded-lg text-sm border border-slate-200 focus:ring-1 focus:ring-primary focus:outline-none" id="slaTargetInput" type="number" value="120"/>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-on-surface-variant mb-1">Max Safe Store Occupancy (Persons)</label>
+                <input class="w-full bg-surface-container-low text-on-surface px-3 py-2 rounded-lg text-sm border border-slate-200 focus:ring-1 focus:ring-primary focus:outline-none" id="maxOccupancyInput" type="number" value="210"/>
+              </div>
+            </div>
+            <button class="px-4 py-2 bg-primary text-surface font-label-md text-xs font-semibold rounded-lg shadow-sm hover:bg-primary-container transition-colors" id="saveSettingsBtn">
+              Save Configuration
+            </button>
+          </div>
+        </section>        <!-- ===================================================================
+             TAB 8: WEEKLY REPORT — GOOGLE SHEETS INVENTORY & OPERATIONS
+             =================================================================== -->
+        <section class="tab-view hidden space-y-4" id="tab-weekly-report">
+          <!-- Top Title Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider">EyeQMart Pune Flagship</span>
+                <span class="text-slate-300">/</span>
+                <span class="text-xs text-on-surface-variant">Live Inventory & Operations Google Sheet</span>
+              </div>
+              <h1 class="text-2xl text-on-surface font-bold tracking-tight mt-0.5">Weekly Report — Interactive Google Sheet</h1>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="downloadWeeklyCSVBtn" class="flex items-center gap-2 px-4 py-2.5 bg-[#0f9d58] text-white rounded-xl text-xs font-bold shadow-md hover:bg-[#0b8043] transition-colors active:scale-95">
+                <span class="material-symbols-outlined text-[18px]">file_download</span>
+                Download CSV Sheet (.csv)
+              </button>
+            </div>
+          </div>
+
+          <!-- Google Sheet Application Container Card -->
+          <div class="bg-white rounded-2xl border border-slate-200/90 shadow-xl overflow-hidden flex flex-col">
+            <!-- 1. Google Sheets App Header Bar (Green Google Sheets Top Bar) -->
+            <div class="bg-[#f8f9fa] border-b border-slate-200 px-4 py-2.5 flex items-center justify-between flex-wrap gap-2">
+              <div class="flex items-center gap-3">
+                <!-- Google Sheet Icon -->
+                <div class="w-9 h-9 rounded-lg bg-[#e6f4ea] flex items-center justify-center text-[#0f9d58] shadow-sm">
+                  <span class="material-symbols-outlined text-[24px]">description</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-slate-800 text-sm tracking-tight" id="gSheetTitle">EyeQMart_Inventory_Weekly_Report_Pune.csv</span>
+                    <span class="material-symbols-outlined text-[16px] text-amber-400 cursor-pointer hover:text-amber-500">star</span>
+                    <span class="material-symbols-outlined text-[16px] text-slate-400 cursor-pointer hover:text-slate-600">drive_file_move</span>
+                    <span class="text-[11px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full font-mono border border-slate-200">Saved to Drive</span>
+                  </div>
+                  <!-- Menu Bar -->
+                  <div class="flex items-center gap-3 text-xs text-slate-600 mt-1 font-medium select-none">
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">File</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">Edit</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">View</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">Insert</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">Format</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">Data</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">Tools</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">Extensions</span>
+                    <span class="hover:bg-slate-200/60 px-1.5 py-0.5 rounded cursor-pointer">Help</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Header Tools -->
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-slate-500 font-medium hidden sm:inline-block">Director: <strong class="text-slate-700">Atharva</strong></span>
+                <button id="downloadGSheetBtn" class="flex items-center gap-1.5 px-3 py-1.5 bg-[#0f9d58] text-white rounded-full text-xs font-bold shadow hover:bg-[#0b8043] transition-colors">
+                  <span class="material-symbols-outlined text-[16px]">download</span>
+                  Export CSV
+                </button>
+                <button class="flex items-center gap-1.5 px-4 py-1.5 bg-[#c2e7ff] text-[#001d35] rounded-full text-xs font-bold shadow-sm hover:bg-[#b3dcfa] transition-colors">
+                  <span class="material-symbols-outlined text-[16px]">lock</span>
+                  Share
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Google Sheets Toolbar -->
+            <div class="bg-[#edf2fa] border-b border-slate-200 px-3 py-1 flex items-center gap-1 overflow-x-auto select-none text-slate-600">
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Undo"><span class="material-symbols-outlined text-[18px]">undo</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Redo"><span class="material-symbols-outlined text-[18px]">redo</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Print"><span class="material-symbols-outlined text-[18px]">print</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Paint format"><span class="material-symbols-outlined text-[18px]">format_paint</span></button>
+              <div class="h-4 w-[1px] bg-slate-300 mx-1"></div>
+              <span class="text-xs px-2 py-0.5 hover:bg-slate-300/60 rounded cursor-pointer font-medium">100%</span>
+              <div class="h-4 w-[1px] bg-slate-300 mx-1"></div>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Format as currency"><span class="material-symbols-outlined text-[18px]">currency_rupee</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Format as percent"><span class="material-symbols-outlined text-[18px]">percent</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Decrease decimal places"><span class="material-symbols-outlined text-[18px]">decimal_decrease</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Increase decimal places"><span class="material-symbols-outlined text-[18px]">decimal_increase</span></button>
+              <div class="h-4 w-[1px] bg-slate-300 mx-1"></div>
+              <span class="text-xs px-2 py-0.5 hover:bg-slate-300/60 rounded cursor-pointer font-medium">Roboto</span>
+              <div class="h-4 w-[1px] bg-slate-300 mx-1"></div>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700 font-bold" title="Bold">B</button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700 italic" title="Italic">I</button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700 line-through" title="Strikethrough">S</button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Text color"><span class="material-symbols-outlined text-[18px]">format_color_text</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Fill color"><span class="material-symbols-outlined text-[18px]">format_color_fill</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Borders"><span class="material-symbols-outlined text-[18px]">border_all</span></button>
+              <div class="h-4 w-[1px] bg-slate-300 mx-1"></div>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Horizontal align"><span class="material-symbols-outlined text-[18px]">format_align_left</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Text wrapping"><span class="material-symbols-outlined text-[18px]">wrap_text</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Create a filter"><span class="material-symbols-outlined text-[18px]">filter_list</span></button>
+              <button class="p-1 hover:bg-slate-300/60 rounded text-slate-700" title="Functions"><span class="material-symbols-outlined text-[18px]">functions</span></button>
+            </div>
+
+            <!-- 3. Google Sheets Formula Bar -->
+            <div class="bg-white border-b border-slate-200 px-3 py-1 flex items-center gap-2 text-xs">
+              <div class="w-12 px-2 py-0.5 bg-slate-50 border border-slate-200 text-center font-mono font-semibold text-slate-700 rounded" id="gSheetCellName">A1</div>
+              <div class="text-[#0f9d58] font-serif italic font-bold text-sm select-none">fx</div>
+              <div class="h-4 w-[1px] bg-slate-300"></div>
+              <input type="text" id="gSheetFormulaInput" class="flex-1 bg-transparent border-none focus:outline-none font-mono text-slate-800 text-xs" value="SKU_CODE" readonly />
+            </div>
+
+            <!-- 4. Interactive Spreadsheet Table Grid -->
+            <div class="overflow-x-auto max-h-[500px] bg-white relative">
+              <table class="w-full text-left border-collapse font-sans text-xs select-none">
+                <thead>
+                  <!-- Google Sheets Column Letters Row: A B C D E F G H I J K -->
+                  <tr class="bg-[#f8f9fa] border-b border-slate-300 text-center text-slate-500 font-mono text-[11px] font-bold">
+                    <th class="w-10 py-1 border-r border-slate-300 bg-[#f1f3f4] text-slate-400"></th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[100px]">A</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[200px]">B</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[100px]">C</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[90px]">D</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[100px]">E</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[100px]">F</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[110px]">G</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[100px]">H</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[120px]">I</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[130px]">J</th>
+                    <th class="py-1 px-3 border-r border-slate-300 min-w-[110px]">K</th>
+                  </tr>
+                </thead>
+                <tbody id="gSheetTableBody" class="font-mono text-xs">
+                  <!-- Populated dynamically by JS -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 5. Google Sheets Bottom Tab Bar -->
+            <div class="bg-[#f8f9fa] border-t border-slate-300 px-3 py-1.5 flex items-center justify-between text-xs">
+              <div class="flex items-center gap-1">
+                <button class="p-1 hover:bg-slate-200 rounded text-slate-600" title="Add Sheet"><span class="material-symbols-outlined text-[18px]">add</span></button>
+                <button class="p-1 hover:bg-slate-200 rounded text-slate-600" title="All Sheets"><span class="material-symbols-outlined text-[18px]">menu</span></button>
+                <div class="h-4 w-[1px] bg-slate-300 mx-1"></div>
+
+                <!-- Sheet Tabs -->
+                <button data-gsheet-tab="inventory" id="gsheetTabInventory" class="gsheet-tab active flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-300 rounded-t border-b-2 border-b-[#0f9d58] font-semibold text-slate-800 shadow-sm">
+                  <span class="w-2 h-2 rounded-full bg-[#0f9d58]"></span>
+                  Inventory_Report
+                </button>
+                <button data-gsheet-tab="footfall" id="gsheetTabFootfall" class="gsheet-tab flex items-center gap-1.5 px-3 py-1 text-slate-600 hover:bg-slate-200/70 rounded-t transition-colors font-medium">
+                  <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                  Daily_Footfall_Summary
+                </button>
+                <button data-gsheet-tab="voids" id="gsheetTabVoids" class="gsheet-tab flex items-center gap-1.5 px-3 py-1 text-slate-600 hover:bg-slate-200/70 rounded-t transition-colors font-medium">
+                  <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                  YOLO_Void_Logs
+                </button>
+              </div>
+
+              <div class="text-[11px] text-slate-500 font-mono flex items-center gap-2">
+                <span>Rows: <strong id="gSheetRowCount">14</strong></span>
+                <span>Columns: <strong>11 (A-K)</strong></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ================= MODALS & TOAST CONTAINER ================= -->
+
+  <!-- Filter Stream Modal -->
+  <div class="modal-backdrop" id="filterModal">
+    <div class="modal-card p-6 space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Filter Operational Stream</h3>
+        <button class="p-1 rounded-md text-on-surface-variant hover:bg-slate-100" id="closeFilterBtn">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Filter live alerts and camera tracking feeds by severity level:</p>
+      <div class="grid grid-cols-2 gap-3 pt-1">
+        <button class="p-3 rounded-lg border border-slate-200 text-left hover:bg-slate-50 transition-colors" data-filter-severity="all">
+          <span class="font-label-md font-semibold block text-on-surface">All Incidents</span>
+          <span class="text-xs text-on-surface-variant">View all operational telemetry</span>
+        </button>
+        <button class="p-3 rounded-lg border border-red-200 text-left bg-red-50/50 hover:bg-red-50 transition-colors" data-filter-severity="critical">
+          <span class="font-label-md font-semibold block text-red-700">Critical Only</span>
+          <span class="text-xs text-red-600">SLA breaches & congestion</span>
+        </button>
+        <button class="p-3 rounded-lg border border-amber-200 text-left bg-amber-50/50 hover:bg-amber-50 transition-colors" data-filter-severity="warning">
+          <span class="font-label-md font-semibold block text-amber-700">Warnings Only</span>
+          <span class="text-xs text-amber-600">Inventory depletion & dwell</span>
+        </button>
+        <button class="p-3 rounded-lg border border-blue-200 text-left bg-blue-50/50 hover:bg-blue-50 transition-colors" data-filter-severity="info">
+          <span class="font-label-md font-semibold block text-blue-700">Informational</span>
+          <span class="text-xs text-blue-600">Spatial clusters & dwell alerts</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export Shift Report Modal -->
+  <div class="modal-backdrop" id="reportModal">
+    <div class="modal-card p-6 space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[20px] text-primary">analytics</span>
+          <h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">EyeQ Shift Telemetry Report</h3>
+        </div>
+        <button class="p-1 rounded-md text-on-surface-variant hover:bg-slate-100" id="closeReportBtn">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <div id="reportModalContent">
+        <!-- Injected dynamically via app.js -->
+      </div>
+      <div class="flex justify-end gap-2 pt-2 border-t border-slate-100">
+        <button class="px-3.5 py-1.5 rounded-lg bg-primary text-surface font-label-md text-label-md hover:bg-primary-container transition-colors" id="downloadReportCsvBtn">
+          Download CSV Summary
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shelf Void Detection Inspection Modal -->
+  <div class="modal-backdrop" id="voidModal">
+    <div class="modal-card max-w-2xl p-6 space-y-4 rounded-2xl glass-panel border border-white/80 shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200/60">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined text-[20px]">center_focus_strong</span>
+          </div>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="voidModalTitle">YOLOv8 Shelf Void Detection</h3>
+            <span class="text-xs text-blue-700 font-semibold font-mono" id="voidModalSubtitle">Shelf AI Model Confidence Telemetry</span>
+          </div>
+        </div>
+        <button class="p-1.5 rounded-xl text-on-surface-variant hover:bg-slate-200/50 transition-colors" id="closeVoidModalBtn">
+          <span class="material-symbols-outlined text-[22px]">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-3" id="voidModalBody">
+        <!-- Rendered dynamically via alertsManager.js -->
+      </div>
+
+      <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+        <span class="text-xs text-on-surface-variant font-medium">Model: YOLOv8-ShelfVision v2.4 • Edge Inference 14ms</span>
+        <div class="flex gap-2">
+          <button class="btn-glass-secondary px-4 py-2 rounded-xl text-xs font-semibold" id="dismissVoidModalBtn">
+            Dismiss
+          </button>
+          <button class="btn-glass-primary px-4 py-2 rounded-xl text-xs font-bold shadow-md" id="dispatchVoidModalBtn">
+            Dispatch Restock Associate
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- ================= ES6 MODULE ENTRY ================= -->
+  <script type="module" src="js/app.js?v=9"></script>
+</body>
+</html>

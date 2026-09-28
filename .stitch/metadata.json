@@ -1,0 +1,226 @@
+{
+  "name": "projects/5533373288613005060",
+  "title": "Retail Intelligence Dashboard",
+  "visibility": "PRIVATE",
+  "createTime": "2026-09-04T12:23:06.041541Z",
+  "updateTime": "2026-09-04T12:27:54.233997Z",
+  "projectType": "TEXT_TO_UI_PRO",
+  "thumbnailScreenshot": {
+    "name": "projects/5533373288613005060/screens/61f0c442f1a6499481ce23cbec48f49b/fileEntries/screenshot",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VsFNIMkOwQR-11VJkNHH7gWvsdD97tOBlajcWUqIdYu-7pCikcspv9vaddqvQ2atFfhkEt1Vn-uuIwQfVEhOk8r27cl0cDQG71s7AKl36QP7AkiHYsyb9_qUgmGoCM8J9woQ0YHKMgW-rKqLg7bqWtLtmEra8L7XZrn_Ore5tD2yRTcWZ7NDK55HUssnj-BuCkjp7i1FeEFkYBLGy2IxXOOMiHRyiraXZ7wvbHG6iGT-hQOc3WZWbSvl0"
+  },
+  "origin": "STITCH",
+  "deviceType": "MOBILE",
+  "designTheme": {
+    "colorMode": "DARK",
+    "font": "SPACE_GROTESK",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#10b981",
+    "headlineFont": "SPACE_GROTESK",
+    "bodyFont": "INTER",
+    "labelFont": "JETBRAINS_MONO",
+    "namedColors": {
+      "secondary_fixed": "#6ff6ff",
+      "on_primary_fixed": "#002113",
+      "inverse_on_surface": "#2f3036",
+      "inverse_primary": "#006c49",
+      "surface_container_highest": "#34343a",
+      "primary": "#4edea3",
+      "surface_variant": "#34343a",
+      "on_tertiary": "#472a00",
+      "on_primary": "#003824",
+      "on_secondary_container": "#006a6f",
+      "on_tertiary_fixed_variant": "#653e00",
+      "surface_container_low": "#1a1b21",
+      "on_primary_container": "#00422b",
+      "outline": "#86948a",
+      "on_error": "#690005",
+      "tertiary_fixed_dim": "#ffb95f",
+      "on_primary_fixed_variant": "#005236",
+      "error": "#ffb4ab",
+      "primary_fixed": "#6ffbbe",
+      "on_secondary_fixed_variant": "#004f53",
+      "primary_container": "#10b981",
+      "on_tertiary_container": "#523200",
+      "surface_container": "#1e1f25",
+      "surface_tint": "#4edea3",
+      "primary_fixed_dim": "#4edea3",
+      "surface_bright": "#38393f",
+      "on_secondary_fixed": "#002022",
+      "on_surface_variant": "#bbcabf",
+      "surface_container_lowest": "#0d0e13",
+      "surface_dim": "#121318",
+      "on_background": "#e3e1e9",
+      "on_error_container": "#ffdad6",
+      "secondary": "#dcfdff",
+      "secondary_container": "#00f1fd",
+      "tertiary": "#ffb95f",
+      "outline_variant": "#3c4a42",
+      "on_surface": "#e3e1e9",
+      "tertiary_fixed": "#ffddb8",
+      "surface_container_high": "#292a2f",
+      "inverse_surface": "#e3e1e9",
+      "secondary_fixed_dim": "#00dce6",
+      "surface": "#121318",
+      "error_container": "#93000a",
+      "on_secondary": "#00373a",
+      "tertiary_container": "#e29100",
+      "on_tertiary_fixed": "#2a1700",
+      "background": "#121318"
+    },
+    "designMd": "---\nname: Retail Telemetry Pulse\ncolors:\n  surface: '#121318'\n  surface-dim: '#121318'\n  surface-bright: '#38393f'\n  surface-container-lowest: '#0d0e13'\n  surface-container-low: '#1a1b21'\n  surface-container: '#1e1f25'\n  surface-container-high: '#292a2f'\n  surface-container-highest: '#34343a'\n  on-surface: '#e3e1e9'\n  on-surface-variant: '#bbcabf'\n  inverse-surface: '#e3e1e9'\n  inverse-on-surface: '#2f3036'\n  outline: '#86948a'\n  outline-variant: '#3c4a42'\n  surface-tint: '#4edea3'\n  primary: '#4edea3'\n  on-primary: '#003824'\n  primary-container: '#10b981'\n  on-primary-container: '#00422b'\n  inverse-primary: '#006c49'\n  secondary: '#dcfdff'\n  on-secondary: '#00373a'\n  secondary-container: '#00f1fd'\n  on-secondary-container: '#006a6f'\n  tertiary: '#ffb95f'\n  on-tertiary: '#472a00'\n  tertiary-container: '#e29100'\n  on-tertiary-container: '#523200'\n  error: '#ffb4ab'\n  on-error: '#690005'\n  error-container: '#93000a'\n  on-error-container: '#ffdad6'\n  primary-fixed: '#6ffbbe'\n  primary-fixed-dim: '#4edea3'\n  on-primary-fixed: '#002113'\n  on-primary-fixed-variant: '#005236'\n  secondary-fixed: '#6ff6ff'\n  secondary-fixed-dim: '#00dce6'\n  on-secondary-fixed: '#002022'\n  on-secondary-fixed-variant: '#004f53'\n  tertiary-fixed: '#ffddb8'\n  tertiary-fixed-dim: '#ffb95f'\n  on-tertiary-fixed: '#2a1700'\n  on-tertiary-fixed-variant: '#653e00'\n  background: '#121318'\n  on-background: '#e3e1e9'\n  surface-variant: '#34343a'\ntypography:\n  display-lg:\n    fontFamily: spaceGrotesk\n    fontSize: 36px\n    fontWeight: '700'\n    lineHeight: 44px\n    letterSpacing: -0.03em\n  display-lg-mobile:\n    fontFamily: spaceGrotesk\n    fontSize: 28px\n    fontWeight: '700'\n    lineHeight: 34px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: spaceGrotesk\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n    letterSpacing: -0.02em\n  headline-md:\n    fontFamily: spaceGrotesk\n    fontSize: 20px\n    fontWeight: '600'\n    lineHeight: 28px\n    letterSpacing: -0.01em\n  headline-sm:\n    fontFamily: spaceGrotesk\n    fontSize: 16px\n    fontWeight: '600'\n    lineHeight: 22px\n  body-lg:\n    fontFamily: inter\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 22px\n  body-md:\n    fontFamily: inter\n    fontSize: 13px\n    fontWeight: '400'\n    lineHeight: 18px\n  body-sm:\n    fontFamily: inter\n    fontSize: 12px\n    fontWeight: '400'\n    lineHeight: 16px\n  label-data-lg:\n    fontFamily: jetbrainsMono\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 22px\n    letterSpacing: -0.01em\n  label-data-md:\n    fontFamily: jetbrainsMono\n    fontSize: 13px\n    fontWeight: '500'\n    lineHeight: 16px\n  label-data-sm:\n    fontFamily: jetbrainsMono\n    fontSize: 11px\n    fontWeight: '500'\n    lineHeight: 14px\n    letterSpacing: 0.04em\n  micro-badge:\n    fontFamily: jetbrainsMono\n    fontSize: 10px\n    fontWeight: '700'\n    lineHeight: 12px\n    letterSpacing: 0.06em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  grid-margin-mobile: 0.75rem\n  grid-margin-desktop: 1.5rem\n  gutter-xs: 0.25rem\n  gutter-sm: 0.5rem\n  gutter-md: 0.75rem\n  gutter-lg: 1rem\n  gutter-xl: 1.5rem\n---\n\n## Brand & Style\n\nThis design system is engineered for floor leads, general managers, and operational directors operating in high-velocity retail environments. It bridges raw sensor telemetry\u2014such as dwell times, heatmaps, live queue bottlenecks, and autonomous inventory scanning\u2014with split-second decision-making. \n\nThe aesthetic is precision-engineered, atmospheric, and command-center driven. It borrows from aerospace glass cockpits and advanced developer telemetry consoles, rendered through deep obsidian backdrops, ultra-crisp micro-typography, and restrained luminescent status indicators. Every element feels low-latency, active, and strictly purposeful, turning sensory overload into decisive real-time control.\n\n## Colors\n\nThe palette establishes an absolute visual hierarchy calibrated for high-density, dim, or variable retail floor lighting. Dark values are meticulously layered to prevent eye fatigue while preserving sharp spatial separation.\n\n- **Foundations**: Canvas background is `#090a0f` (deep void), elevated surfaces sit on `#0f1117` (obsidian charcoal), and interactive floating cards occupy `#161922`. Structural card delineation relies on crisp `#262a38` borders.\n- **Status & Telemetry Accents**:\n  - **Live / Nominal / Positive**: `#10b981` (emerald) paired with `#00f2fe` (electric cyan) for live data streaming, active beacons, and positive conversion metrics.\n  - **Warning / Congestion / Threshold**: `#f59e0b` (luminescent amber) for queue latency spikes and inventory replenishment alerts.\n  - **Critical / Stockout / Emergency**: `#ef4444` (vivid crimson) for instant operational escalations.\n- **Data Demarcation & Secondary Elements**: `#64748b` and `#94a3b8` provide muted slate tones for grid axes, timestamps, unit labels, and inactive states.\n\n## Typography\n\nTypography pairs geometric structure with industrial readouts:\n- **Headlines (`spaceGrotesk`)**: Provides an authoritative, technical profile for store zones, aggregate summaries, and critical module titles.\n- **Interface Body (`inter`)**: Optimized for high-density scanning and neutral readability across logs and manager action notes.\n- **Telemetry & Labels (`jetbrainsMono`)**: Governs counts, sensor IDs, time deltas, financial numbers, and status badges. Tabular figures ensure aligned vertical columns without dynamic horizontal jitter during live telemetry updates.\n\n## Layout & Spacing\n\nThe layout is built for maximum spatial density without visual clutter, enabling one-handed mobile auditing alongside comprehensive multi-display command monitors.\n\n- **Grid Architecture**: \n  - **Mobile (< 768px)**: 4-column fluid layout with `0.75rem` outer margins and compact `0.5rem` to `0.75rem` gutters. Metric cards arrange into 2-column micro-grids or single-column stacked telemetry feeds.\n  - **Tablet (768px \u2013 1024px)**: 8-column layout allowing floor heatmaps and live telemetry cards to sit side-by-side.\n  - **Desktop (> 1024px)**: 12-column fixed/proportional grid with `1.5rem` margins and an expandable situational awareness rail.\n- **Rhythm & Density**: Vertical spacing relies on tight 4px and 8px base progressions to prioritize data-over-whitespace, ensuring critical alerts and primary metrics remain above the fold.\n\n## Elevation & Depth\n\nDepth is established strictly through dark tonal layering and selective luminescence rather than traditional dropped shadows:\n\n- **Surface Levels**:\n  - **Base Canvas**: `#090a0f`\n  - **Module Level 1**: `#0f1117` with `1px solid #262a38`\n  - **Card Level 2**: `#161922` with `1px solid #262a38`\n  - **Overlay / Modal Level 3**: `#1c202d` with a luminous `1px solid #3b4257`\n- **Luminescence & Status Glow**:\n  - Interactive elements and alert boundaries use soft colored ambient drop shadows (`0 0 16px rgba(16, 185, 129, 0.15)` for green, `0 0 16px rgba(245, 158, 11, 0.2)` for amber, and `0 0 20px rgba(239, 68, 68, 0.25)` for crimson).\n  - Telemetry cards housing real-time anomalies feature a top-edge accent line with an integrated radial highlight.\n\n## Shapes\n\nThe geometric architecture balances modern ergonomics with high-density data containers:\n- Large analytical panels and surface cards utilize `rounded-2xl` (1rem to 1.5rem radius) to soften complex data visualizations.\n- Interactive controls, nested metric boxes, and micro-badges use standard `rounded-lg` (0.5rem) or `rounded-md` (0.375rem) to maximize interior data real estate.\n- Pulsing status pips and binary toggle indicators use full circular or pill radii.\n\n## Components\n\n- **Telemetry Cards**: Built with `rounded-2xl` corners, `#161922` background, and `1px solid #262a38`. Features a localized header zone hosting the metric title, JetBrains Mono readout, dynamic sparkline, and a micro-status pill.\n- **Buttons**:\n  - **Primary Operational Action**: Electric emerald (`#10b981`) background, deep charcoal text (`#090a0f`), semi-bold weight, subtle emerald edge glow on hover/active.\n  - **Secondary / Tactical**: Translucent `#161922` with `1px solid #262a38` and slate text (`#94a3b8`), transitioning to `#00f2fe` border on focus.\n  - **Critical Alert Action**: Crimson fill (`#ef4444`) with white text and urgent high-visibility strobe or static glow.\n- **Micro-Badges & Status Tags**: Monospaced, uppercase micro-badges using 10% opacity tints of the status color with full-saturation text and a 1px border matching the accent (e.g., `#10b9811a` background, `#10b981` text).\n- **Inputs & Filters**: Compact, dark inset styling (`#0f1117`) with `1px solid #262a38`. On focus, shifts to a razor-sharp `#00f2fe` border with a subtle 2px cyan ambient bloom.\n- **Lists & Sensor Feed Rows**: Flush, borderless list rows with subtle alternating hovers (`#1c202d`). Values right-align in monospace numbers; timestamps render in muted `#64748b`.\n- **Live Floor Beacons & Heatmap Nodes**: Circular status rings with synchronized pulsing outer waves for real-time customer tracking and queue dwell markers.",
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#10b981",
+    "overrideSecondaryColor": "#00f2fe",
+    "overrideTertiaryColor": "#f59e0b",
+    "overrideNeutralColor": "#090a0f",
+    "spacingScale": 2,
+    "typography": {
+      "display-lg": {
+        "fontFamily": "spaceGrotesk",
+        "fontSize": "36px",
+        "fontWeight": "700",
+        "lineHeight": "44px",
+        "letterSpacing": "-0.03em"
+      },
+      "label-data-md": {
+        "fontFamily": "jetbrainsMono",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "16px"
+      },
+      "label-data-sm": {
+        "fontFamily": "jetbrainsMono",
+        "fontSize": "11px",
+        "fontWeight": "500",
+        "lineHeight": "14px",
+        "letterSpacing": "0.04em"
+      },
+      "body-lg": {
+        "fontFamily": "inter",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "lineHeight": "22px"
+      },
+      "headline-lg": {
+        "fontFamily": "spaceGrotesk",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.02em"
+      },
+      "headline-sm": {
+        "fontFamily": "spaceGrotesk",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "22px"
+      },
+      "label-data-lg": {
+        "fontFamily": "jetbrainsMono",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "lineHeight": "22px",
+        "letterSpacing": "-0.01em"
+      },
+      "body-md": {
+        "fontFamily": "inter",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "lineHeight": "18px"
+      },
+      "micro-badge": {
+        "fontFamily": "jetbrainsMono",
+        "fontSize": "10px",
+        "fontWeight": "700",
+        "lineHeight": "12px",
+        "letterSpacing": "0.06em"
+      },
+      "display-lg-mobile": {
+        "fontFamily": "spaceGrotesk",
+        "fontSize": "28px",
+        "fontWeight": "700",
+        "lineHeight": "34px",
+        "letterSpacing": "-0.02em"
+      },
+      "body-sm": {
+        "fontFamily": "inter",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "16px"
+      },
+      "headline-md": {
+        "fontFamily": "spaceGrotesk",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "lineHeight": "28px",
+        "letterSpacing": "-0.01em"
+      }
+    },
+    "spacing": {
+      "grid-margin-mobile": "0.75rem",
+      "gutter-sm": "0.5rem",
+      "gutter-xl": "1.5rem",
+      "gutter-lg": "1rem",
+      "gutter-xs": "0.25rem",
+      "gutter-md": "0.75rem",
+      "grid-margin-desktop": "1.5rem"
+    },
+    "headlineFontFamily": "Space Grotesk",
+    "bodyFontFamily": "Inter",
+    "labelFontFamily": "Jetbrains Mono"
+  },
+  "screenInstances": [
+    {
+      "id": "0b4ec82a013d49299a9627727b481126",
+      "sourceScreen": "projects/5533373288613005060/screens/0b4ec82a013d49299a9627727b481126",
+      "x": 3942,
+      "y": 32,
+      "width": 1280,
+      "height": 1393
+    },
+    {
+      "id": "36be5e06-a35c-4108-95e3-1059e03ef6be",
+      "sourceScreen": "projects/5533373288613005060/screens/8908445714451425625",
+      "width": 512,
+      "height": 364,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "61f0c442f1a6499481ce23cbec48f49b",
+      "sourceScreen": "projects/5533373288613005060/screens/61f0c442f1a6499481ce23cbec48f49b",
+      "x": 1888,
+      "y": 32,
+      "width": 390,
+      "height": 2906
+    },
+    {
+      "id": "assets_4d8054eb287748dd8beacd7ec47ddc49",
+      "x": 2342,
+      "y": 32,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/4d8054eb287748dd8beacd7ec47ddc49",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_a5a0760fc5e843cea9d5864aa6fb3498",
+      "x": 576,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/a5a0760fc5e843cea9d5864aa6fb3498",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "e8cb2e4eee604beabecaceb84f90d126",
+      "sourceScreen": "projects/5533373288613005060/screens/e8cb2e4eee604beabecaceb84f90d126",
+      "x": 3366,
+      "y": 32,
+      "width": 512,
+      "height": 286
+    }
+  ],
+  "metadata": {
+    "userRole": "OWNER"
+  },
+  "lastSyncTime": "2026-09-04T12:46:26.699530+00:00"
+}
