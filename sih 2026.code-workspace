@@ -10,5 +10,7 @@
 			"path": "../../footfall"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "sih 2026"
+	}
 }
